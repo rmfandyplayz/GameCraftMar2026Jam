@@ -15,25 +15,48 @@ public class Player : MonoBehaviour
     //Item 5: Burp Cloth (if we have time)
     public SpriteRenderer ItemSprite;
 
+    public GameObject CoffeeItem;
+
     //Note for future me, First sprite should be blank as it's ID is 0!
     public Sprite[] Sprites;
+
+    private float useLockTimer = 0f;
     
     void Update() 
     {
+        useLockTimer -= Time.deltaTime;
+             
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
         transform.position += new Vector3(moveX, moveY, 0) * speed * Time.deltaTime;
+
+        //can't use an item if bro has none lol
+        //this is nessasary so it doesn't override pickup input!
+
+        if (ItemId == 0){
+            return;
+        } else 
+        {
+            if (useLockTimer <= 0f && Input.GetKeyDown(KeyCode.E))
+            {
+                UseItem();
+            }
+        }
     }
 
     public void PlayerPickup(int id){
         ItemId = id;
 
         ItemSprite.sprite = Sprites[id];
+
+        useLockTimer = 0.1f;
     }
 
     public void UseItem(){
-        if (ItemId == 0){
-            return;
+
+        if (ItemId == 1){
+            Instantiate(CoffeeItem, transform.position, Quaternion.identity);
+            PlayerPickup(0);
         }
     }
-}
+}   

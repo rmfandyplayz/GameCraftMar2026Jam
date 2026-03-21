@@ -16,8 +16,8 @@ public class Item : MonoBehaviour
     }
 
     void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
+    {     
+        if (Input.GetKeyDown(KeyCode.E) && canInteract == true)
         {
             player.PlayerPickup(ID);
 

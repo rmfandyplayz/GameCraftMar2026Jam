@@ -7,17 +7,23 @@ namespace Baby
 {
     public class BabyMovementManager : MonoBehaviour
     {
-        [HideInInspector] public MovementNode[] nodes;
+        private MovementNode[] nodes;
+        [HideInInspector] public List<MovementNode> goalNodes;
         private List<Connection> connections;
         [SerializeField] private float moveSpeed;
         [HideInInspector] public bool isMoving;
         
         void Awake()
         {
+            goalNodes = new();
             connections = new();
             nodes = FindObjectsByType<MovementNode>(FindObjectsSortMode.None);
             foreach (MovementNode node1 in nodes)
             {
+                if (node1.isGoalNode)
+                {
+                    goalNodes.Add(node1);
+                }
                 foreach (MovementNode node2 in node1.GetAdjacentNodes())
                 {
                     if (!connections.Contains(new Connection(node1, node2)))
@@ -28,11 +34,11 @@ namespace Baby
             }
         }
 
-        public MovementNode GetNearestNode(Vector3 pos)
+        public MovementNode GetNearestGoalNode(Vector3 pos)
         {
             MovementNode nearest = null;
             float nearestDistance = float.PositiveInfinity;
-            foreach (MovementNode node in nodes)
+            foreach (MovementNode node in goalNodes)
             {
                 if (Vector3.Distance(node.transform.position, pos) < nearestDistance)
                 {

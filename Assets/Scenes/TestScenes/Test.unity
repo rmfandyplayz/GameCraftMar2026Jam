@@ -3381,6 +3381,7 @@ GameObject:
   - component: {fileID: 562915007}
   - component: {fileID: 562915006}
   - component: {fileID: 562915009}
+  - component: {fileID: 562915010}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3506,6 +3507,28 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &562915010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562915005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cded45b827fe4714937b7399497fb2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DynamicCamera2D
+  target: {fileID: 1233555477}
+  smoothTime: 0.15
+  offset: {x: 0, y: 0}
+  deadZoneSize: {x: 10, y: 10}
+  useLookAhead: 0
+  lookAheadAmount: 1.5
+  lookAheadSmoothTime: 0.2
+  useBounds: 0
+  minCameraPosition: {x: -16.2, y: 0}
+  maxCameraPosition: {x: 24.8, y: 13.2}
 --- !u!1 &697755017
 GameObject:
   m_ObjectHideFlags: 0
@@ -5892,7 +5915,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 8
-      m_TileSpriteIndex: 1
+      m_TileSpriteIndex: 15
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -5939,8 +5962,8 @@ Tilemap:
   m_TileSpriteArray:
   - m_RefCount: 3
     m_Data: {fileID: 6346869468982584461, guid: 3df5efc693e204a3c97bbd902d55b466, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 136397036, guid: 3df5efc693e204a3c97bbd902d55b466, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 14
     m_Data: {fileID: -1106132695, guid: 3df5efc693e204a3c97bbd902d55b466, type: 3}
   - m_RefCount: 12
@@ -5967,8 +5990,8 @@ Tilemap:
     m_Data: {fileID: 601754992, guid: 3df5efc693e204a3c97bbd902d55b466, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 136397036, guid: 3df5efc693e204a3c97bbd902d55b466, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -6869672741427119573, guid: 3df5efc693e204a3c97bbd902d55b466, type: 3}
   - m_RefCount: 1

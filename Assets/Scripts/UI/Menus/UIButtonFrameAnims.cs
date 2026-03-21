@@ -1,98 +1,65 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
-using System.Collections;
-using DG.Tweening;
 using UnityEngine.EventSystems;
+using DG.Tweening; 
 
-// plays sprite animations for each button state
 public class UIButtonFrameAnims : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    [SerializeField] private float timePerFrame;
-
     [SerializeField] private List<Sprite> normalFrames;
     [SerializeField] private List<Sprite> hoverFrames;
     [SerializeField] private Sprite disabledFrame;
+    [SerializeField] private float timePerFrame = 0.1f;
 
-    private bool isHovering = false;
+    private bool isHovering;
     private bool wasInteractable;
-    private Image targetImage;
-    private Coroutine currentAnimation;
     private Button button;
+    private Image targetImage;
 
-    void Start() // grab refs, plays normal animations if allowed. otherwise, set to disabled
+    private void Start()
     {
-        if(targetImage == null)
-            targetImage = GetComponent<Image>();
-        
         button = GetComponent<Button>();
+        targetImage = GetComponent<Image>();
         wasInteractable = button.IsInteractable();
-
-        if (wasInteractable)
-            PlayAnimation(normalFrames);
-        else
-            SetDisabled();
+        
+        UpdateVisuals();
     }
 
-    void Update() // check if button is supposed to be interactable via parent canvasgroup
+    void Update()
     {
-        if (button.IsInteractable() != wasInteractable)
+        bool currentInteractable = button.IsInteractable();
+        if (currentInteractable != wasInteractable)
         {
-            wasInteractable = button.IsInteractable();
-            
-            if(wasInteractable)
-                PlayAnimation(isHovering ? hoverFrames : normalFrames);
-            else
-                SetDisabled();
+            wasInteractable = currentInteractable;
+            UpdateVisuals();
         }
     }
-    
-    public void OnPointerEnter(PointerEventData eventData)
+
+    public void OnPointerEnter(PointerEventData eventData) 
     {
         isHovering = true;
-        if (!wasInteractable)
-            return;
-        
-        PlayAnimation(hoverFrames);
+        if (wasInteractable) 
+            targetImage.DOPlaySprites(hoverFrames, timePerFrame);
     }
 
-    public void OnPointerExit(PointerEventData eventData)
+    public void OnPointerExit(PointerEventData eventData) 
     {
         isHovering = false;
+        if (wasInteractable) 
+            targetImage.DOPlaySprites(normalFrames, timePerFrame);
+    }
 
+    private void UpdateVisuals()
+    {
         if (!wasInteractable)
-            return;
-        
-        PlayAnimation(normalFrames);
-    }
-    
-    private void SetDisabled() // stop animation and set to disabled sprite
-    {
-        if(currentAnimation != null)
-            StopCoroutine(currentAnimation);
-        if(disabledFrame != null)
-            targetImage.sprite = disabledFrame;
-    }
-    
-    private void PlayAnimation(List<Sprite> frames)
-    {
-        if (frames == null || frames.Count == 0)
-            return;
-        
-        if(currentAnimation != null)
-            StopCoroutine(currentAnimation);
-        
-        currentAnimation = StartCoroutine(Animate(frames));
-    }
-
-    IEnumerator Animate(List<Sprite> frames)
-    {
-        int index = 0;
-        while (true)
         {
-            targetImage.sprite = frames[index];
-            index = (index + 1) % frames.Count;
-            yield return new WaitForSeconds(timePerFrame);
+            targetImage.DOKill();
+            if (disabledFrame != null) 
+                targetImage.sprite = disabledFrame;
+        }
+        else
+        {
+            targetImage.DOPlaySprites(isHovering ? hoverFrames : normalFrames, timePerFrame);
         }
     }
 }

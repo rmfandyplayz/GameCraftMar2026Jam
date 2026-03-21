@@ -3,7 +3,6 @@ using DG.Tweening;
 using UnityEngine.UI;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 // written by andy
 // handles multi-item transitions in the main menu

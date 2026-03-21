@@ -777,6 +777,8 @@ MonoBehaviour:
   OnDropItem:
     m_PersistentCalls:
       m_Calls: []
+  animator: {fileID: 1233555480}
+  playerSprite: {fileID: 1233555476}
 --- !u!212 &1233555476
 SpriteRenderer:
   serializedVersion: 2

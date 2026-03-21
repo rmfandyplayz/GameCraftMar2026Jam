@@ -10,12 +10,6 @@ public class Player : MonoBehaviour
     public float speed = 5;
     public int ItemId = 0;
 
-    private bool canTakeDamage = true;
-
-    [Header("Damage")]
-    public float iFrameDuration = 0.3f;
-    public float flashInterval = 0.1f;
-
     [Header("Items")]
     //Item 1: Coffee Mug
     //Item 2: Food
@@ -134,45 +128,15 @@ public class Player : MonoBehaviour
     }
 
     public void TakeDamage(){
-        if (canTakeDamage == false)
-        {
-            return;
-        }
-
-        canTakeDamage = false;
-        
         health -= 1;
         
         OnHPChanged.Invoke(health);
-
-        StartCoroutine(DamageIFrames());
 
         if (health <= 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
-
-    private System.Collections.IEnumerator DamageIFrames()
-{
-    float timer = 0f;
-
-    while (timer < iFrameDuration)
-    {
-        // flash red
-        playerSprite.color = Color.red;
-        yield return new WaitForSeconds(flashInterval);
-
-        // back to normal
-        playerSprite.color = Color.white;
-        yield return new WaitForSeconds(flashInterval);
-
-        timer += flashInterval * 2f;
-    }
-
-    playerSprite.color = Color.white;
-    canTakeDamage = true;
-}
 
     // public static Sprite GetItemSprite(int id)
     // {

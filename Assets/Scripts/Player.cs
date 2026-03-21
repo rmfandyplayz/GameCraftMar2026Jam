@@ -1,4 +1,7 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
@@ -19,9 +22,10 @@ public class Player : MonoBehaviour
 
     //Note for future me, First sprite should be blank as it's ID is 0!
     public Sprite[] Sprites;
-
     private float useLockTimer = 0f;
-    
+
+    public UnityEvent<int> OnHPChanged = new();
+
     void Update() 
     {
         useLockTimer -= Time.deltaTime;
@@ -58,5 +62,18 @@ public class Player : MonoBehaviour
             Instantiate(CoffeeItem, transform.position, Quaternion.identity);
             PlayerPickup(0);
         }
+    }
+
+    public void TakeDamage(){
+        health -= 1;
+        
+        OnHPChanged.Invoke(health);
+
+        if (health <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+
     }
 }   

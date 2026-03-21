@@ -13,18 +13,17 @@ public class Player : MonoBehaviour
     public int ItemId = 0;
 
     [Header("Items")]
-    // Item 1: Coffee Mug
-    // Item 2: Food
-    // Item 3: Rattle
-    // Item 4: Bottle
-    // Item 5: Burp Cloth
     public SpriteRenderer ItemSprite;
-
     public GameObject CoffeeItem;
 
-    // First sprite should be blank because ID 0 = no item
     public Sprite[] Sprites;
     private float useLockTimer = 0f;
+
+    [Header("I-Frames")]
+    public float iFrameDuration = 1f;
+    public float flashSpeed = 12f;
+    private float iFrameTimer = 0f;
+    private bool isInvincible = false;
 
     [Header("Events for andy lol")]
     public UnityEvent<int> OnHPChanged = new();
@@ -37,15 +36,17 @@ public class Player : MonoBehaviour
 
     [NonSerialized] public Vector2 move;
 
-    private float lastIdleIndex = 0f; // 0 = down, 1 = side, 2 = up
+    private float lastIdleIndex = 0f;
 
-    // New Input System actions
     private InputAction moveAction;
     private InputAction useAction;
 
+    private Rigidbody2D rb;
+
     private void Awake()
     {
-        // Movement: WASD + Arrow Keys + Gamepad left stick
+        rb = GetComponent<Rigidbody2D>();
+
         moveAction = new InputAction("Move", InputActionType.Value);
         moveAction.AddCompositeBinding("2DVector")
             .With("Up", "<Keyboard>/w")
@@ -61,7 +62,6 @@ public class Player : MonoBehaviour
 
         moveAction.AddBinding("<Gamepad>/leftStick");
 
-        // Use item: E key + gamepad south button (A on Xbox / Cross on PS)
         useAction = new InputAction("Use", InputActionType.Button);
         useAction.AddBinding("<Keyboard>/e");
         useAction.AddBinding("<Gamepad>/buttonSouth");
@@ -93,10 +93,22 @@ public class Player : MonoBehaviour
     {
         useLockTimer -= Time.deltaTime;
 
-        // Read movement from new Input System
-        move = moveAction.ReadValue<Vector2>();
+        move = moveAction.ReadValue<Vector2>().normalized;
 
-        transform.position += (Vector3)(move * (speed * Time.deltaTime));
+        // I-FRAME TIMER + FLASH
+        if (isInvincible)
+        {
+            iFrameTimer -= Time.deltaTime;
+
+            // Flash effect
+            playerSprite.enabled = Mathf.FloorToInt(Time.time * flashSpeed) % 2 == 0;
+
+            if (iFrameTimer <= 0f)
+            {
+                isInvincible = false;
+                playerSprite.enabled = true;
+            }
+        }
 
         bool isMoving = move.magnitude > 0.01f;
 
@@ -108,15 +120,7 @@ public class Player : MonoBehaviour
             {
                 lastIdleIndex = 1f;
                 animator.SetFloat("idleIndex", 1f);
-
-                if (move.x > 0)
-                {
-                    playerSprite.flipX = true;
-                }
-                else if (move.x < 0)
-                {
-                    playerSprite.flipX = false;
-                }
+                playerSprite.flipX = move.x > 0;
             }
             else if (move.y > 0)
             {
@@ -134,6 +138,11 @@ public class Player : MonoBehaviour
             animator.SetBool("isMoving", false);
             animator.SetFloat("idleIndex", lastIdleIndex);
         }
+    }
+
+    private void FixedUpdate()
+    {
+        rb.MovePosition(rb.position + move * speed * Time.fixedDeltaTime);
     }
 
     private void OnUsePerformed(InputAction.CallbackContext context)
@@ -172,15 +181,22 @@ public class Player : MonoBehaviour
             PlayerPickup(0);
         }
 
-        if (ItemId == 3){
+        if (ItemId == 3)
+        {
             FindFirstObjectByType<BabyController>()?.SetGoalNode(transform.position);
         }
     }
 
     public void TakeDamage()
     {
+        if (isInvincible)
+            return;
+
         health -= 1;
         OnHPChanged.Invoke(health);
+
+        isInvincible = true;
+        iFrameTimer = iFrameDuration;
 
         if (health <= 0)
         {

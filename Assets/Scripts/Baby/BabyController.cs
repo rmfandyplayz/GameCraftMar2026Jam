@@ -13,10 +13,10 @@ namespace Baby
         void Start()
         {
             movement = GetComponent<BabyMovementManager>();
-            nextGoal = movement.nodes[Random.Range(0, movement.nodes.Length)];
+            nextGoal = movement.goalNodes[Random.Range(0, movement.goalNodes.Count)];
             while (nextGoal == currentNode)
             {
-                nextGoal = movement.nodes[Random.Range(0, movement.nodes.Length)];
+                nextGoal = movement.goalNodes[Random.Range(0, movement.goalNodes.Count)];
             }
         }
 
@@ -30,10 +30,10 @@ namespace Baby
                     movement.MoveTo(currentNode, nextGoal);
                     movement.isMoving = true;
                     currentNode = nextGoal;
-                    nextGoal = movement.nodes[Random.Range(0, movement.nodes.Length)];
+                    nextGoal = movement.goalNodes[Random.Range(0, movement.goalNodes.Count)];
                     while (nextGoal == currentNode)
                     {
-                        nextGoal = movement.nodes[Random.Range(0, movement.nodes.Length)];
+                        nextGoal = movement.goalNodes[Random.Range(0, movement.goalNodes.Count)];
                     }
                     timer = 0;
                 }
@@ -42,7 +42,7 @@ namespace Baby
 
         public void SetGoalNode(Vector3 pos)
         {
-            nextGoal = movement.GetNearestNode(pos);
+            nextGoal = movement.GetNearestGoalNode(pos);
         }
     }
 }

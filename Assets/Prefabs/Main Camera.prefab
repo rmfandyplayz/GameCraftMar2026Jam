@@ -153,9 +153,9 @@ MonoBehaviour:
   target: {fileID: 0}
   smoothTime: 0.1
   offset: {x: 0, y: 0}
-  deadZoneSize: {x: 9, y: 9}
-  useLookAhead: 1
-  lookAheadAmount: 1.5
+  deadZoneSize: {x: 9, y: 7}
+  useLookAhead: 0
+  lookAheadAmount: 16
   lookAheadSmoothTime: 0.2
   useBounds: 0
   minCameraPosition: {x: -16.2, y: 0}

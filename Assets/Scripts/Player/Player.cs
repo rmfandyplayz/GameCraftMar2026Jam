@@ -1,6 +1,6 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System;
 using UnityEngine.Events;
 
 public class Player : MonoBehaviour
@@ -30,23 +30,28 @@ public class Player : MonoBehaviour
     public UnityEvent<Sprite> OnPickupItem = new();
     public UnityEvent OnDropItem = new();
 
-    // 🔥 NEW: Animation
     [Header("Animation")]
     public Animator animator;
     public SpriteRenderer playerSprite; // assign your player sprite here
 
+
+    [NonSerialized] public Vector2 move;
+
+    private void Start()
+    {
+        if (FindAnyObjectByType<PlayerController>() == null)
+        {
+            gameObject.AddComponent<PlayerController>();
+        }
+    }
+
     void Update() 
     {
         useLockTimer -= Time.deltaTime;
-             
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
+        
+        transform.position += (Vector3)(move * (speed * Time.deltaTime));
 
-        transform.position += new Vector3(moveX, moveY, 0) * speed * Time.deltaTime;
-
-        // 🔥 ANIMATION LOGIC START
-
-        bool isMoving = moveX != 0 || moveY != 0;
+        bool isMoving = move.magnitude > 0;
 
         // Reset all first
         animator.SetBool("Side", false);
@@ -55,43 +60,40 @@ public class Player : MonoBehaviour
 
         if (isMoving)
         {
-            if (moveX != 0)
+            if (move.x != 0)
             {
                 animator.SetBool("Side", true);
 
                 // Flip character (left = default, right = flipped)
-                if (moveX > 0)
+                if (move.x > 0)
                 {
                     playerSprite.flipX = true;
                 }
-                else if (moveX < 0)
+                else if (move.x < 0)
                 {
                     playerSprite.flipX = false;
                 }
             }
-            else if (moveY > 0)
+            else if (move.y > 0)
             {
                 animator.SetBool("Up", true);
             }
-            else if (moveY < 0)
+            else if (move.y < 0)
             {
                 animator.SetBool("Down", true);
             }
         }
 
-        // 🔥 ANIMATION LOGIC END
 
         //can't use an item if bro has none lol
         //this is nessasary so it doesn't override pickup input!
 
         if (ItemId == 0){
             return;
-        } else 
+        }
+        if (useLockTimer <= 0f && Input.GetKeyDown(KeyCode.E))
         {
-            if (useLockTimer <= 0f && Input.GetKeyDown(KeyCode.E))
-            {
-                UseItem();
-            }
+            UseItem();
         }
     }
 

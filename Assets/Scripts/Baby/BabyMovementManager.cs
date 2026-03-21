@@ -1,17 +1,32 @@
 using UnityEngine;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using Random = UnityEngine.Random;
 
 namespace Baby
 {
     public class BabyMovementManager : MonoBehaviour
     {
+        private bool testMoving;
+        [SerializeField] private MovementNode testCurrNode;
         private MovementNode[] nodes;
         private List<Connection> connections;
+        [SerializeField] private float moveSpeed;
 
+        void Update()
+        {
+            if (!testMoving)
+            {
+                MovementNode node = nodes[UnityEngine.Random.Range(0, nodes.Length)];
+                MoveTo(testCurrNode, node);
+                testCurrNode = node;
+            }
+        }
         void Start()
         {
+            connections = new();
             nodes = FindObjectsByType<MovementNode>(FindObjectsSortMode.None);
             foreach (MovementNode node1 in nodes)
             {
@@ -24,7 +39,7 @@ namespace Baby
                 }
             }
         }
-        
+
         public MovementNode GetRandomNode(MovementNode curr)
         {
             List<MovementNode> possibleNodes = curr.GetAdjacentNodes();
@@ -35,10 +50,14 @@ namespace Baby
         {
             Dictionary<MovementNode, float> distances = new();
             PriorityQueue<MovementNode> pq = new();
+            Dictionary<MovementNode, MovementNode> previous = new();
+
             foreach (MovementNode node in nodes)
             {
                 distances.Add(node, float.PositiveInfinity);
+                previous.Add(node, null);
             }
+
             distances[curr] = 0;
             pq.Enqueue(curr, distances[curr]);
             while (pq.Count > 0)
@@ -46,108 +65,157 @@ namespace Baby
                 (MovementNode, float) queueItem = pq.Dequeue();
                 MovementNode currentNode = queueItem.Item1;
                 float currentDistance = queueItem.Item2;
+
+                if (currentNode == goal)
+                {
+                    break;
+                }
+
                 if (!(currentDistance > distances[currentNode]))
                 {
-                    foreach(MovementNode adjacentNode in currentNode.GetAdjacentNodes())
+                    foreach (MovementNode adjacentNode in currentNode.GetAdjacentNodes())
                     {
-                        if ((distances[currentNode] + Math.Abs((currentNode.transform.position - adjacentNode.transform.position).magnitude)) < distances[adjacentNode])
+                        if (distances[currentNode] + Vector3.Distance(currentNode.transform.position,
+                                adjacentNode.transform.position) < distances[adjacentNode])
                         {
-                            distances[adjacentNode] = distances[currentNode] + Math.Abs((currentNode.transform.position - adjacentNode.transform.position).magnitude);
+                            distances[adjacentNode] = distances[currentNode] +
+                                                      Vector3.Distance(currentNode.transform.position,
+                                                          adjacentNode.transform.position);
+                            previous[adjacentNode] = currentNode;
                             pq.Enqueue(adjacentNode, distances[adjacentNode]);
                         }
                     }
                 }
-                
+
             }
-        }
-    }
 
-    public struct Connection
-    {
-        public MovementNode node1;
-        public MovementNode node2;
-
-        public Connection(MovementNode node1, MovementNode node2)
-        {
-            this.node1 = node1;
-            this.node2 = node2;
-        }
-
-        public bool Equals(Connection connection)
-        {
-            if (((node1 != connection.node1) && (node1 != connection.node2)) || ((node2 != connection.node1) && (node2 != connection.node2)))
+            List<MovementNode> path = new();
+            MovementNode pathNode = goal;
+            while (pathNode != null)
             {
-                return true;
+                path.Insert(0, pathNode); // Insert at start to reverse the path
+                pathNode = previous[pathNode];
             }
-            else {return false;}
-        }
-    }
-    
-    public class PriorityQueue<T>
-    {
-        private List<(T item, float priority)> _heap = new();
-
-        public int Count => _heap.Count;
-
-        // Add element
-        public void Enqueue(T item, float priority)
-        {
-            _heap.Add((item, priority));
-            HeapifyUp(_heap.Count - 1);
+            testMoving = true;
+            StartCoroutine(TravelPath(path));
         }
 
-        // Remove smallest priority
-        public (T, float) Dequeue()
+        private IEnumerator TravelPath(List<MovementNode> path)
         {
-            if (_heap.Count == 0)
-                throw new InvalidOperationException("Queue is empty");
-
-            (T, float) root = _heap[0];
-
-            _heap[0] = _heap[^1];
-            _heap.RemoveAt(_heap.Count - 1);
-
-            HeapifyDown(0);
-
-            return root;
-        }
-
-        // Heap helpers
-        private void HeapifyUp(int index)
-        {
-            while (index > 0)
+            foreach (MovementNode node in path)
             {
-                int parent = (index - 1) / 2;
+                Vector3 targetPosition = node.transform.position;
 
-                if (_heap[index].priority >= _heap[parent].priority)
-                    break;
+                // Move towards this node until we reach it
+                while (Vector3.Distance(transform.position, targetPosition) > 0.01f)
+                {
+                    transform.position = Vector3.MoveTowards(
+                        transform.position,
+                        targetPosition,
+                        moveSpeed * Time.deltaTime
+                    );
 
-                (_heap[index], _heap[parent]) = (_heap[parent], _heap[index]);
-                index = parent;
+                    yield return null; // wait until next frame
+                }
+
+                transform.position = targetPosition;
+            }
+            testMoving = false;
+        }
+
+
+
+        public struct Connection
+        {
+            public MovementNode node1;
+            public MovementNode node2;
+
+            public Connection(MovementNode node1, MovementNode node2)
+            {
+                this.node1 = node1;
+                this.node2 = node2;
+            }
+
+            public bool Equals(Connection connection)
+            {
+                if (((node1 != connection.node1) && (node1 != connection.node2)) ||
+                    ((node2 != connection.node1) && (node2 != connection.node2)))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
 
-        private void HeapifyDown(int index)
+        public class PriorityQueue<T>
         {
-            int lastIndex = _heap.Count - 1;
+            private List<(T item, float priority)> _heap = new();
 
-            while (true)
+            public int Count => _heap.Count;
+
+            // Add element
+            public void Enqueue(T item, float priority)
             {
-                int left = 2 * index + 1;
-                int right = 2 * index + 2;
-                int smallest = index;
+                _heap.Add((item, priority));
+                HeapifyUp(_heap.Count - 1);
+            }
 
-                if (left <= lastIndex && _heap[left].priority < _heap[smallest].priority)
-                    smallest = left;
+            // Remove smallest priority
+            public (T, float) Dequeue()
+            {
+                if (_heap.Count == 0)
+                    throw new InvalidOperationException("Queue is empty");
 
-                if (right <= lastIndex && _heap[right].priority < _heap[smallest].priority)
-                    smallest = right;
+                (T, float) root = _heap[0];
 
-                if (smallest == index)
-                    break;
+                _heap[0] = _heap[^1];
+                _heap.RemoveAt(_heap.Count - 1);
 
-                (_heap[index], _heap[smallest]) = (_heap[smallest], _heap[index]);
-                index = smallest;
+                HeapifyDown(0);
+
+                return root;
+            }
+
+            // Heap helpers
+            private void HeapifyUp(int index)
+            {
+                while (index > 0)
+                {
+                    int parent = (index - 1) / 2;
+
+                    if (_heap[index].priority >= _heap[parent].priority)
+                        break;
+
+                    (_heap[index], _heap[parent]) = (_heap[parent], _heap[index]);
+                    index = parent;
+                }
+            }
+
+            private void HeapifyDown(int index)
+            {
+                int lastIndex = _heap.Count - 1;
+
+                while (true)
+                {
+                    int left = 2 * index + 1;
+                    int right = 2 * index + 2;
+                    int smallest = index;
+
+                    if (left <= lastIndex && _heap[left].priority < _heap[smallest].priority)
+                        smallest = left;
+
+                    if (right <= lastIndex && _heap[right].priority < _heap[smallest].priority)
+                        smallest = right;
+
+                    if (smallest == index)
+                        break;
+
+                    (_heap[index], _heap[smallest]) = (_heap[smallest], _heap[index]);
+                    index = smallest;
+                }
             }
         }
     }

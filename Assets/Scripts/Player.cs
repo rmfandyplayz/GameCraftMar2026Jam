@@ -24,7 +24,11 @@ public class Player : MonoBehaviour
     public Sprite[] Sprites;
     private float useLockTimer = 0f;
 
+    //Events
+    [Header("Events for andy lol")]
     public UnityEvent<int> OnHPChanged = new();
+    public UnityEvent<Sprite> OnPickupItem = new();
+    public UnityEvent OnDropItem = new();
 
     void Update() 
     {
@@ -53,6 +57,14 @@ public class Player : MonoBehaviour
 
         ItemSprite.sprite = Sprites[id];
 
+        if (id > 0)
+        {
+            OnDropItem.Invoke(); 
+        } else 
+        {
+            OnPickupItem.Invoke(Sprites[id]); 
+        }
+
         useLockTimer = 0.1f;
     }
 
@@ -76,4 +88,9 @@ public class Player : MonoBehaviour
 
 
     }
+
+    // public static Sprite GetItemSprite(int id)
+    // {
+    //     return Sprites[id];
+    // }
 }   

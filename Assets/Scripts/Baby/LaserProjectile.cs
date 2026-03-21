@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class LaserProjectile : DamagingObject
 {
-    [SerializeField] private float MoveSpeed;
+    [SerializeField] private float moveSpeed;
     [NonSerialized] public Vector2 moveDir;
+    [SerializeField] private float laserDestroyTime = 3f;
+    private float timer;
     
     
     private void Update()
     {
-        transform.position += (Vector3)(moveDir.normalized * MoveSpeed);
+        timer += Time.deltaTime;
+        transform.position += (Vector3)(moveDir.normalized * moveSpeed);
+        if (timer > laserDestroyTime)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

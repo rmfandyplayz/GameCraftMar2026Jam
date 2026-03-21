@@ -16,6 +16,7 @@ public class DynamicCamera2D : MonoBehaviour
     public bool useLookAhead = true;
     public float lookAheadAmount = 1.5f;
     public float lookAheadSmoothTime = 0.2f;
+    public float lookAheadMoveThreshold = 0.05f;
 
     [Header("Camera Bounds")]
     public bool useBounds = true;
@@ -43,6 +44,7 @@ public class DynamicCamera2D : MonoBehaviour
             Vector3 startPos = transform.position;
             startPos.x = target.position.x + offset.x;
             startPos.y = target.position.y + offset.y;
+            startPos.z = transform.position.z;
             transform.position = ClampToBounds(startPos);
         }
     }
@@ -61,7 +63,14 @@ public class DynamicCamera2D : MonoBehaviour
 
         if (useLookAhead)
         {
-            desiredLookAhead.x = Mathf.Sign(targetDelta.x) * lookAheadAmount;
+            if (Mathf.Abs(targetDelta.x) > lookAheadMoveThreshold)
+            {
+                desiredLookAhead.x = Mathf.Sign(targetDelta.x) * lookAheadAmount;
+            }
+            else
+            {
+                desiredLookAhead.x = 0f;
+            }
 
             currentLookAhead = Vector3.SmoothDamp(
                 currentLookAhead,

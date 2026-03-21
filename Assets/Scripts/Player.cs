@@ -30,13 +30,56 @@ public class Player : MonoBehaviour
     public UnityEvent<Sprite> OnPickupItem = new();
     public UnityEvent OnDropItem = new();
 
+    // 🔥 NEW: Animation
+    [Header("Animation")]
+    public Animator animator;
+    public SpriteRenderer playerSprite; // assign your player sprite here
+
     void Update() 
     {
         useLockTimer -= Time.deltaTime;
              
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
+
         transform.position += new Vector3(moveX, moveY, 0) * speed * Time.deltaTime;
+
+        // 🔥 ANIMATION LOGIC START
+
+        bool isMoving = moveX != 0 || moveY != 0;
+
+        // Reset all first
+        animator.SetBool("Side", false);
+        animator.SetBool("Up", false);
+        animator.SetBool("Down", false);
+
+        if (isMoving)
+        {
+            if (moveX != 0)
+            {
+                animator.SetBool("Side", true);
+
+                // Flip character (left = default, right = flipped)
+                if (moveX > 0)
+                {
+                    playerSprite.flipX = true;
+                }
+                else if (moveX < 0)
+                {
+                    playerSprite.flipX = false;
+                }
+            }
+            else if (moveY > 0)
+            {
+                animator.SetBool("Up", true);
+            }
+            else if (moveY < 0)
+            {
+                animator.SetBool("Down", true);
+            }
+        }
+
+        // 🔥 ANIMATION LOGIC END
 
         //can't use an item if bro has none lol
         //this is nessasary so it doesn't override pickup input!
@@ -85,12 +128,10 @@ public class Player : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-
-
     }
 
     // public static Sprite GetItemSprite(int id)
     // {
     //     return Sprites[id];
     // }
-}   
+}

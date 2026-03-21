@@ -37,6 +37,8 @@ public class Player : MonoBehaviour
 
     [NonSerialized] public Vector2 move;
 
+    private float lastIdleIndex = 0f; // 0 = down, 1 = side, 2 = up
+
     private void Start()
     {
         if (FindAnyObjectByType<PlayerController>() == null)
@@ -53,18 +55,16 @@ public class Player : MonoBehaviour
 
         bool isMoving = move.magnitude > 0;
 
-        // Reset all first
-        animator.SetBool("Side", false);
-        animator.SetBool("Up", false);
-        animator.SetBool("Down", false);
-
         if (isMoving)
         {
+            animator.SetBool("isMoving", true);
+
             if (move.x != 0)
             {
-                animator.SetBool("Side", true);
+                lastIdleIndex = 1f;
+                animator.SetFloat("idleIndex", 1f);
 
-                // Flip character (left = default, right = flipped)
+                // Flip character
                 if (move.x > 0)
                 {
                     playerSprite.flipX = true;
@@ -76,14 +76,20 @@ public class Player : MonoBehaviour
             }
             else if (move.y > 0)
             {
-                animator.SetBool("Up", true);
+                lastIdleIndex = 2f;
+                animator.SetFloat("idleIndex", 2f);
             }
             else if (move.y < 0)
             {
-                animator.SetBool("Down", true);
+                lastIdleIndex = 0f;
+                animator.SetFloat("idleIndex", 0f);
             }
+        } 
+        else 
+        {
+            animator.SetBool("isMoving", false);
+            animator.SetFloat("idleIndex", lastIdleIndex);
         }
-
 
         //can't use an item if bro has none lol
         //this is nessasary so it doesn't override pickup input!

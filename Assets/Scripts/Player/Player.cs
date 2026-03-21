@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using Baby;
 
 public class Player : MonoBehaviour
 {
@@ -169,6 +170,10 @@ public class Player : MonoBehaviour
         {
             Instantiate(CoffeeItem, transform.position, Quaternion.identity);
             PlayerPickup(0);
+        }
+
+        if (ItemId == 3){
+            FindFirstObjectByType<BabyController>()?.SetGoalNode(transform.position);
         }
     }
 

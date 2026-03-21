@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: 108a965ee6f9a454aa1bb57af22646a0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2994376036945587793
+    second: Kitchen_tile_set_0
+  - first:
+      213: 7365783022642363897
+    second: Kitchen_tile_set_1
+  - first:
+      213: 4095291645747860134
+    second: Kitchen_tile_set_2
+  - first:
+      213: 7600002262962521258
+    second: Kitchen_tile_set_3
+  - first:
+      213: -1731109420293568571
+    second: Kitchen_tile_set_4
+  - first:
+      213: 427753578614988043
+    second: Kitchen_tile_set_5
+  - first:
+      213: 2898548269920240401
+    second: Kitchen_tile_set_6
+  - first:
+      213: 1156655649907189523
+    second: Kitchen_tile_set_7
+  - first:
+      213: 4351922162215465506
+    second: Kitchen_tile_set_8
+  - first:
+      213: 1130858650036806706
+    second: Kitchen_tile_set_9
+  - first:
+      213: 280128313099892137
+    second: Kitchen_tile_set_10
+  - first:
+      213: 5203893883964782176
+    second: Kitchen_tile_set_11
+  - first:
+      213: -776984483537947385
+    second: Kitchen_tile_set_12
+  - first:
+      213: -2406733776158699066
+    second: Kitchen_tile_set_13
+  - first:
+      213: 2343476899834781931
+    second: Kitchen_tile_set_14
+  - first:
+      213: 5192920547998288405
+    second: Kitchen_tile_set_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Kitchen_tile_set_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 709
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa19ae9fbd6d176d0800000000000000
+      internalID: -2994376036945587793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kitchen_tile_set_1
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 709
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fd733d22a4883660800000000000000
+      internalID: 7365783022642363897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kitchen_tile_set_2
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 709
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a21d64dd0665d830800000000000000
+      internalID: 4095291645747860134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kitchen_tile_set_3
+      rect:
+        serializedVersion: 2
+        x: 969
+        y: 709
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa4cb08aac1a87960800000000000000
+      internalID: 7600002262962521258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kitchen_tile_set_4
+      rect:
+        serializedVersion: 2
+        x: 1289
+        y: 709
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c7c110772dd9f7e0800000000000000
+      internalID: -1731109420293568571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kitchen_tile_set_5
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 709
+        width: 303
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0d9fb80d9fafe500800000000000000
+      internalID: 427753578614988043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kitchen_tile_set_6
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 387
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1134be85b46b93820800000000000000
+      internalID: 2898548269920240401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kitchen_tile_set_7
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 389
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 317aa247f244d0010800000000000000
+      internalID: 1156655649907189523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kitchen_tile_set_8
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 389
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 222b0092622256c30800000000000000
+      internalID: 4351922162215465506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kitchen_tile_set_9
+      rect:
+        serializedVersion: 2
+        x: 969
+        y: 387
+        width: 302
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2342f9e53fd91bf00800000000000000
+      internalID: 1130858650036806706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kitchen_tile_set_10
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 387
+        width: 303
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a539d1773733e300800000000000000
+      internalID: 280128313099892137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kitchen_tile_set_11
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 69
+        width: 302
+        height: 303
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0667c828ae1f73840800000000000000
+      internalID: 5203893883964782176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kitchen_tile_set_12
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 69
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 705fab69ab89735f0800000000000000
+      internalID: -776984483537947385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kitchen_tile_set_13
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 69
+        width: 302
+        height: 303
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c1502bc160999ed0800000000000000
+      internalID: -2406733776158699066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kitchen_tile_set_14
+      rect:
+        serializedVersion: 2
+        x: 969
+        y: 69
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be06cf9f2d3b58020800000000000000
+      internalID: 2343476899834781931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kitchen_tile_set_15
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 69
+        width: 303
+        height: 303
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51ac342a9b5f01840800000000000000
+      internalID: 5192920547998288405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Kitchen_tile_set_0: -2994376036945587793
+      Kitchen_tile_set_1: 7365783022642363897
+      Kitchen_tile_set_10: 280128313099892137
+      Kitchen_tile_set_11: 5203893883964782176
+      Kitchen_tile_set_12: -776984483537947385
+      Kitchen_tile_set_13: -2406733776158699066
+      Kitchen_tile_set_14: 2343476899834781931
+      Kitchen_tile_set_15: 5192920547998288405
+      Kitchen_tile_set_2: 4095291645747860134
+      Kitchen_tile_set_3: 7600002262962521258
+      Kitchen_tile_set_4: -1731109420293568571
+      Kitchen_tile_set_5: 427753578614988043
+      Kitchen_tile_set_6: 2898548269920240401
+      Kitchen_tile_set_7: 1156655649907189523
+      Kitchen_tile_set_8: 4351922162215465506
+      Kitchen_tile_set_9: 1130858650036806706
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

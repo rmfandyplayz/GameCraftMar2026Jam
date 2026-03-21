@@ -116,6 +116,8 @@ MonoBehaviour:
   Sprites:
   - {fileID: 0}
   - {fileID: 4631271119293318757, guid: b2749256f282e4ca3b15deb1c60d97da, type: 3}
+  - {fileID: 4631271119293318757, guid: b2749256f282e4ca3b15deb1c60d97da, type: 3}
+  - {fileID: 6176816175218970642, guid: b5d66ba850e554b24ba9dd8bf3ed3d0c, type: 3}
   OnHPChanged:
     m_PersistentCalls:
       m_Calls: []

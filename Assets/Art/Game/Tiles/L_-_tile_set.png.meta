@@ -154,10 +154,10 @@ TextureImporter:
       name: TL
       rect:
         serializedVersion: 2
-        x: 10
-        y: 1076
-        width: 300
-        height: 300
+        x: 9
+        y: 1073
+        width: 302
+        height: 302
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,10 +176,10 @@ TextureImporter:
       name: T
       rect:
         serializedVersion: 2
-        x: 330
-        y: 1076
-        width: 300
-        height: 300
+        x: 329
+        y: 1073
+        width: 302
+        height: 302
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,10 +198,10 @@ TextureImporter:
       name: TR
       rect:
         serializedVersion: 2
-        x: 651
+        x: 648
         y: 1073
-        width: 300
-        height: 300
+        width: 304
+        height: 302
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,10 +220,10 @@ TextureImporter:
       name: singleWallT
       rect:
         serializedVersion: 2
-        x: 971
+        x: 969
         y: 1073
-        width: 300
-        height: 300
+        width: 302
+        height: 302
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,10 +242,10 @@ TextureImporter:
       name: L_-_tile_set_4
       rect:
         serializedVersion: 2
-        x: 10
-        y: 754
-        width: 300
-        height: 300
+        x: 9
+        y: 753
+        width: 302
+        height: 302
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -264,10 +264,10 @@ TextureImporter:
       name: L_-_tile_set_5
       rect:
         serializedVersion: 2
-        x: 330
-        y: 754
-        width: 300
-        height: 300
+        x: 329
+        y: 753
+        width: 302
+        height: 302
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -286,10 +286,10 @@ TextureImporter:
       name: L_-_tile_set_6
       rect:
         serializedVersion: 2
-        x: 650
-        y: 754
-        width: 300
-        height: 300
+        x: 648
+        y: 753
+        width: 304
+        height: 302
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -308,10 +308,10 @@ TextureImporter:
       name: singlewallM
       rect:
         serializedVersion: 2
-        x: 971
-        y: 755
-        width: 300
-        height: 300
+        x: 969
+        y: 753
+        width: 302
+        height: 302
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -330,10 +330,10 @@ TextureImporter:
       name: shortWall
       rect:
         serializedVersion: 2
-        x: 1292
-        y: 756
-        width: 300
-        height: 300
+        x: 1289
+        y: 752
+        width: 302
+        height: 302
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -352,10 +352,10 @@ TextureImporter:
       name: bl
       rect:
         serializedVersion: 2
-        x: 10
-        y: 434
-        width: 300
-        height: 300
+        x: 9
+        y: 433
+        width: 302
+        height: 303
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -374,10 +374,10 @@ TextureImporter:
       name: b
       rect:
         serializedVersion: 2
-        x: 332
-        y: 434
-        width: 300
-        height: 300
+        x: 329
+        y: 433
+        width: 302
+        height: 303
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -396,10 +396,10 @@ TextureImporter:
       name: br
       rect:
         serializedVersion: 2
-        x: 650
-        y: 435
-        width: 300
-        height: 300
+        x: 648
+        y: 433
+        width: 304
+        height: 303
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -418,10 +418,10 @@ TextureImporter:
       name: singlewallB
       rect:
         serializedVersion: 2
-        x: 970
-        y: 432
-        width: 300
-        height: 300
+        x: 969
+        y: 433
+        width: 302
+        height: 303
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -437,13 +437,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: singlesomething
+      name: TLCel
       rect:
         serializedVersion: 2
-        x: 1293
-        y: 431
-        width: 300
-        height: 300
+        x: 1289
+        y: 433
+        width: 302
+        height: 303
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -462,10 +462,10 @@ TextureImporter:
       name: floor1
       rect:
         serializedVersion: 2
-        x: 12
-        y: 115
-        width: 300
-        height: 300
+        x: 9
+        y: 113
+        width: 302
+        height: 302
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -484,10 +484,10 @@ TextureImporter:
       name: floor2
       rect:
         serializedVersion: 2
-        x: 332
-        y: 114
-        width: 300
-        height: 300
+        x: 329
+        y: 113
+        width: 302
+        height: 302
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -506,10 +506,10 @@ TextureImporter:
       name: floor3
       rect:
         serializedVersion: 2
-        x: 650
-        y: 115
-        width: 300
-        height: 300
+        x: 648
+        y: 113
+        width: 304
+        height: 302
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -528,10 +528,10 @@ TextureImporter:
       name: floor
       rect:
         serializedVersion: 2
-        x: 968
-        y: 114
-        width: 300
-        height: 300
+        x: 969
+        y: 113
+        width: 302
+        height: 302
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -542,6 +542,226 @@ TextureImporter:
       bones: []
       spriteID: 5da5a171176cef840800000000000000
       internalID: 5259859603836525269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: L_-_tile_set_0
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 1073
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 160853bccd7e546d68edaae8c7fce466
+      internalID: 171060547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: L_-_tile_set_1
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 1073
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe9dfd0e80a60411eb8f5d3a1325658d
+      internalID: 136397036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: L_-_tile_set_2
+      rect:
+        serializedVersion: 2
+        x: 1929
+        y: 1073
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d3d5ef9b95a248f29b84efe9a56f24d
+      internalID: -1185168467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: L_-_tile_set_3
+      rect:
+        serializedVersion: 2
+        x: 1610
+        y: 752
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1541c597d3c81492295d3da1d9ff907f
+      internalID: 1281787799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: L_-_tile_set_7
+      rect:
+        serializedVersion: 2
+        x: 1934
+        y: 753
+        width: 300
+        height: 302
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17e7b05adc6d048bebae91d8c357adad
+      internalID: 1495641098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRCel
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 433
+        width: 303
+        height: 303
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3feb873a62fa8491e8f172460f881d3d
+      internalID: 734679271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: L_-_tile_set_9
+      rect:
+        serializedVersion: 2
+        x: 1930
+        y: 433
+        width: 302
+        height: 303
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f17b9fdbf91f416e9930071311a9b02
+      internalID: -1106132695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BLCel
+      rect:
+        serializedVersion: 2
+        x: 1289
+        y: 113
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 877544280935f4a1ca3b8e9a58e7ee96
+      internalID: 835456753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BRcel
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 113
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7421f9278029044aa87a98ff92d2d8eb
+      internalID: 601754992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floo
+      rect:
+        serializedVersion: 2
+        x: 1929
+        y: 116
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2ea7ac6e1924433e802d514553e85a9
+      internalID: 1977727106
       vertices: []
       indices: 
       edges: []
@@ -560,24 +780,34 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":1,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
+      BLCel: 835456753
+      BRcel: 601754992
+      L_-_tile_set_0: 171060547
+      L_-_tile_set_1: 136397036
+      L_-_tile_set_2: -1185168467
+      L_-_tile_set_3: 1281787799
       L_-_tile_set_4: -5722848476218190872
       L_-_tile_set_5: -7979722883373520693
       L_-_tile_set_6: 6346869468982584461
+      L_-_tile_set_7: 1495641098
+      L_-_tile_set_9: -1106132695
       T: 5867748608883763236
       TL: -7869212734732249110
+      TLCel: -6195459399661042198
       TR: -6869672741427119573
+      TRCel: 734679271
       b: -983586495714226503
       bl: 5493243273819171210
       br: -8631641749101697387
+      floo: 1977727106
       floor: 5259859603836525269
       floor1: -3718501591251037732
       floor2: 7822289233022317165
       floor3: -4802528144301069111
       shortWall: -3867589197337984174
       singleWallT: 8991522396474824825
-      singlesomething: -6195459399661042198
       singlewallB: -6249686702760935767
       singlewallM: 8091779265374284875
   mipmapLimitGroupName: 

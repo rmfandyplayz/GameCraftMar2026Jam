@@ -2,29 +2,17 @@ using UnityEngine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using Random = UnityEngine.Random;
 
 namespace Baby
 {
     public class BabyMovementManager : MonoBehaviour
     {
-        private bool testMoving;
-        [SerializeField] private MovementNode testCurrNode;
-        private MovementNode[] nodes;
+        [HideInInspector] public MovementNode[] nodes;
         private List<Connection> connections;
         [SerializeField] private float moveSpeed;
-
-        void Update()
-        {
-            if (!testMoving)
-            {
-                MovementNode node = nodes[UnityEngine.Random.Range(0, nodes.Length)];
-                MoveTo(testCurrNode, node);
-                testCurrNode = node;
-            }
-        }
-        void Start()
+        [HideInInspector] public bool isMoving;
+        
+        void Awake()
         {
             connections = new();
             nodes = FindObjectsByType<MovementNode>(FindObjectsSortMode.None);
@@ -40,10 +28,20 @@ namespace Baby
             }
         }
 
-        public MovementNode GetRandomNode(MovementNode curr)
+        public MovementNode GetNearestNode(Vector3 pos)
         {
-            List<MovementNode> possibleNodes = curr.GetAdjacentNodes();
-            return possibleNodes[UnityEngine.Random.Range(0, possibleNodes.Count)];
+            MovementNode nearest = null;
+            float nearestDistance = float.PositiveInfinity;
+            foreach (MovementNode node in nodes)
+            {
+                if (Vector3.Distance(node.transform.position, pos) < nearestDistance)
+                {
+                    nearest = node;
+                    nearestDistance = Vector3.Distance(node.transform.position, pos);
+                }
+            }
+
+            return nearest;
         }
 
         public void MoveTo(MovementNode curr, MovementNode goal)
@@ -96,7 +94,7 @@ namespace Baby
                 path.Insert(0, pathNode); // Insert at start to reverse the path
                 pathNode = previous[pathNode];
             }
-            testMoving = true;
+            isMoving = true;
             StartCoroutine(TravelPath(path));
         }
 
@@ -120,7 +118,7 @@ namespace Baby
 
                 transform.position = targetPosition;
             }
-            testMoving = false;
+            isMoving = false;
         }
 
 

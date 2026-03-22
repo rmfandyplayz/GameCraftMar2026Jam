@@ -25,11 +25,10 @@ namespace Baby
         private BabyMindController mindControl;
         [SerializeField] private MovementNode currentNode;
         private MovementNode nextGoal;
-        [SerializeField] private Animator mindControlSpiral;
+        [SerializeField] private GameObject mindControlSpiral;
 
         void Start()
         {
-            mindControlSpiral = GetComponentInChildren<Animator>();
             movement = GetComponent<BabyMovementManager>();
             mindControl = GetComponent<BabyMindController>();
             mindControl.enabled = false;
@@ -73,7 +72,6 @@ namespace Baby
                 
                 if (moveTimer >= chillTime)
                 {
-                    Debug.Log(currentNode.location);
                     movement.MoveTo(currentNode, nextGoal);
                     if (currentNode.location == NodeLocation.PlayRoom)
                     {
@@ -130,7 +128,8 @@ namespace Baby
 
                 if (mcTimer >= mindControlRate)
                 {
-                    mindControlSpiral.gameObject.SetActive(true);
+                    mindControlSpiral.SetActive(true);
+                    mcTimer = 0;
                 }
             }
         }

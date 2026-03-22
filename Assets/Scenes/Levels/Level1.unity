@@ -16635,6 +16635,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &668774355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 668774356}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &668774356
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668774355}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 20.28194, y: -60.8686, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &672096619
 GameObject:
   m_ObjectHideFlags: 0
@@ -30837,6 +30868,10 @@ PrefabInstance:
       propertyPath: mindControlRate
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1368217941026839251, guid: 16ab0773ab0f5664a9ec147a3515b480, type: 3}
+      propertyPath: mindControlSpiral
+      value: 
+      objectReference: {fileID: 668774355}
     - target: {fileID: 2404917782840255650, guid: 16ab0773ab0f5664a9ec147a3515b480, type: 3}
       propertyPath: player
       value: 
@@ -31139,6 +31174,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 623697741000674219, guid: 07e71c9bf318246d58a4973dd09bdb1d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 665657545800205328, guid: 07e71c9bf318246d58a4973dd09bdb1d, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -31363,3 +31402,4 @@ SceneRoots:
   - {fileID: 1762128226}
   - {fileID: 1910756535}
   - {fileID: 33126196}
+  - {fileID: 668774356}

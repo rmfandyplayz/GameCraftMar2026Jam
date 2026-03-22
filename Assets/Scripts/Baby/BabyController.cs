@@ -101,9 +101,7 @@ namespace Baby
                         if (hit.tag == "Player")
                         {
                             mindControl.enabled = true;
-                            StartCoroutine(TimeMindControl());
-                            Debug.Log("hello");
-                        }
+                            StartCoroutine(TimeMindControl()); }
                     }
                 }
             }

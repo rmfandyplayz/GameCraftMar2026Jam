@@ -5,13 +5,14 @@ using Random = UnityEngine.Random;
 
 public class BabyMindController : MonoBehaviour
 {
-    private Player player;
+    public Player player;
     private float timer;
 
     private void OnEnable()
     {
         player = FindAnyObjectByType<Player>();
         player.canMove = false;
+        player.move = Vector2.zero;
     }
 
     private void OnDisable()

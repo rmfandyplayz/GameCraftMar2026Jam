@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2224768714843411114}
   - component: {fileID: 7087767048555705841}
   m_Layer: 0
-  m_Name: obj3
+  m_Name: ObjFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,4 +47,4 @@ MonoBehaviour:
   OnObjectiveUpdate:
     m_PersistentCalls:
       m_Calls: []
-  objectiveText: Lure the baby (E) to your location to feed.
+  objectiveText: Lure the baby with E, have it shoot at fire.

@@ -6,7 +6,7 @@ public class Comic : MonoBehaviour
     public GameObject[] comicStrips;
 
     public int currentComicStrip = 0;
-    private int comicAmount = 4;
+    public int comicAmount = 4;
 
     public SceneTransition sceneTrans;
     public string SceneName;

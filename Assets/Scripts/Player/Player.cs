@@ -72,6 +72,7 @@ public class Player : MonoBehaviour
 
     [Header("Objectives")]
     public GameObject[] itemObjectives;
+    public bool isFireQuest = false;
 
     private void Awake()
     {
@@ -166,6 +167,16 @@ public class Player : MonoBehaviour
         {
             animator.SetBool("isMoving", false);
             animator.SetFloat("idleIndex", lastIdleIndex);
+        }
+
+        if (isFireQuest == true)
+        {
+            GameObject[] fires = GameObject.FindGameObjectsWithTag("fire");
+
+            if (fires.Length == 0)
+            {
+                sceneTrans.LoadScene(winScene);
+            }
         }
     }
 

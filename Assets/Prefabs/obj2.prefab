@@ -47,4 +47,4 @@ MonoBehaviour:
   OnObjectiveUpdate:
     m_PersistentCalls:
       m_Calls: []
-  objectiveText: You fed the baby!
+  objectiveText: Feed the baby!

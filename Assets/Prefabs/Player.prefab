@@ -400,6 +400,7 @@ MonoBehaviour:
   - {fileID: 3580676213028389754, guid: 357440415f80f412ab20502363a778aa, type: 3}
   - {fileID: 3580676213028389754, guid: 1eca25bdb751f475095655611dcff8f3, type: 3}
   - {fileID: 3580676213028389754, guid: bb0f04faad1034465a92bca62f0181ad, type: 3}
+  isFireQuest: 0
 --- !u!50 &3402016789487743225
 Rigidbody2D:
   serializedVersion: 5

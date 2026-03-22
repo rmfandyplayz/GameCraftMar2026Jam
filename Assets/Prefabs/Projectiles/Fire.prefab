@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5343850716213779476}
   m_Layer: 0
   m_Name: Fire
-  m_TagString: Untagged
+  m_TagString: Fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,8 +107,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FireProjectile
   moveDir: {x: 0, y: 0}
-  moveSpeed: 0.1
-  growSpeed: 0.015
+  moveSpeed: 0.0005
+  growSpeed: 0.002
   stopMovingTime: 0.3
   growTime: 3
 --- !u!95 &8207173174683442314
@@ -163,7 +163,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

@@ -369,6 +369,7 @@ MonoBehaviour:
   - {fileID: 2527167854140851630, guid: e3189a524e8d840eb89ed7d2966e6635, type: 3}
   - {fileID: 4644287277805893625, guid: 3f2c5c2bc923a467d8e8f21dcd245638, type: 3}
   - {fileID: 8397946553292968662, guid: 38dffc41baaa144779e777e4231f8d96, type: 3}
+  - {fileID: 5165508518530666934, guid: f32a7a15477754785b1685b992b77a54, type: 3}
   RattleEffect: {fileID: 7303418713443589382, guid: a213c0178ff6a934bbd2ce181e9b540a, type: 3}
   Sprites:
   - {fileID: 0}
@@ -376,6 +377,7 @@ MonoBehaviour:
   - {fileID: -2174827668884051896, guid: 61612e47513044dacb8ecb96e289884e, type: 3}
   - {fileID: 6176816175218970642, guid: b5d66ba850e554b24ba9dd8bf3ed3d0c, type: 3}
   - {fileID: 752413829, guid: 61612e47513044dacb8ecb96e289884e, type: 3}
+  - {fileID: -5206061185841173057, guid: def6d0da4c552402a83d2326edb316f1, type: 3}
   iFrameDuration: 1
   flashSpeed: 12
   OnHPChanged:
@@ -402,6 +404,8 @@ MonoBehaviour:
   - {fileID: 3580676213028389754, guid: 1eca25bdb751f475095655611dcff8f3, type: 3}
   - {fileID: 3580676213028389754, guid: bb0f04faad1034465a92bca62f0181ad, type: 3}
   isFireQuest: 0
+  crib: 0
+  dark: 1
 --- !u!50 &3402016789487743225
 Rigidbody2D:
   serializedVersion: 5

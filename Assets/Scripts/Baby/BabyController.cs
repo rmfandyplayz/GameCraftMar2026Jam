@@ -25,6 +25,7 @@ namespace Baby
         private BabyMindController mindControl;
         [SerializeField] private MovementNode currentNode;
         private MovementNode nextGoal;
+        [SerializeField] private GameObject mindControlSpiral;
 
         void Start()
         {
@@ -71,7 +72,6 @@ namespace Baby
                 
                 if (moveTimer >= chillTime)
                 {
-                    Debug.Log(currentNode.location);
                     movement.MoveTo(currentNode, nextGoal);
                     if (currentNode.location == NodeLocation.PlayRoom)
                     {
@@ -128,17 +128,30 @@ namespace Baby
 
                 if (mcTimer >= mindControlRate)
                 {
+                    mindControlSpiral.SetActive(true);
                     mcTimer = 0;
-                    foreach (Collider2D hit in Physics2D.OverlapCircleAll(transform.position, mcRadius))
-                    {
-                        if (hit.tag == "Player")
-                        {
-                            mindControl.enabled = true;
-                            StartCoroutine(TimeMindControl()); }
-                    }
                 }
             }
         }
+
+        public IEnumerator McCheckEnumerator()
+        {
+            float timer = 0;
+            while (timer < 1f)
+            {
+                timer += Time.deltaTime;
+                foreach (Collider2D hit in Physics2D.OverlapCircleAll(transform.position, mcRadius))
+                {
+                    if (hit.tag == "Player")
+                    {
+                        mindControl.enabled = true;
+                        StartCoroutine(TimeMindControl()); 
+                    }
+                }
+                yield return null;
+            }
+        }
+        
 
         private IEnumerator TimeMindControl()
         {

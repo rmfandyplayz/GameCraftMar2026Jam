@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     // 2 = bottle
     // 4 = filled bottle
     // 3 = rattle
+    //5 = book
     public int ItemId = 0;
 
     [HideInInspector]
@@ -73,6 +74,9 @@ public class Player : MonoBehaviour
     [Header("Objectives")]
     public GameObject[] itemObjectives;
     public bool isFireQuest = false;
+
+    public bool crib = false;
+    public bool dark = true;
 
     private void Awake()
     {
@@ -238,6 +242,15 @@ public class Player : MonoBehaviour
                 PlayerPickup(2);
             }
         }
+
+        if (ItemId == 5)
+        {
+            if ((crib == true) || (dark == true))
+            {
+                sceneTrans.LoadScene(winScene);
+                PlayerPickup(0);
+            }
+        }
     }
 
     public void TakeDamage()
@@ -285,6 +298,18 @@ public class Player : MonoBehaviour
         if (ItemId == 4)
         {
             indicator.SetActive(true);
+        }
+    }
+
+    public void darkToggle()
+    {
+        if (dark == true)
+        {
+            dark = false;
+            return;
+        } else
+        {
+            dark = true;
         }
     }
 }

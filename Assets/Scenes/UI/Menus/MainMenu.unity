@@ -1049,7 +1049,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonFrameAnims
   normalFrames:
   - {fileID: 1937028358810224293, guid: 4c7454bb1389748f2bb61ed060f5c389, type: 3}
-  - {fileID: -3726539302135606886, guid: fae5095614a5045dd95aa3ee112c63b6, type: 3}
+  - {fileID: 8586434171926553505, guid: 7c2f3d5250baa4ba0b70242f193d0bc4, type: 3}
   hoverFrames:
   - {fileID: 4616932718064448201, guid: 1300f88a4dccc489fbee74a39a412520, type: 3}
   - {fileID: 2390255544363111718, guid: 515ea5d2302b44668b7ec2129c817c9a, type: 3}

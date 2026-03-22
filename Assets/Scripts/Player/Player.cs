@@ -59,9 +59,11 @@ public class Player : MonoBehaviour
     [Header("Sounds")]
     public GameObject hurtSound;
     public AudioSource DrinkSound;
+    public GameObject Music;
 
     [Header("Visuals")]
     public GameObject indicator;
+    public GameObject DeathScreen;
 
     [Header("Misc.")]
     public string winScene;
@@ -242,7 +244,9 @@ public class Player : MonoBehaviour
 
         if (health <= 0)
         {
-            sceneTrans.LoadScene(SceneManager.GetActiveScene().name);
+            DeathScreen.SetActive(true);
+            Music.SetActive(false);
+            canMove = false;
         }
     }
 

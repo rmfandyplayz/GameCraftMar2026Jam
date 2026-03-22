@@ -1,34 +1,52 @@
 using UnityEngine;
 
-public class DynamicCamera2D : MonoBehaviour
+[RequireComponent(typeof(Camera))]
+public class SmartCamera2D : MonoBehaviour
 {
     [Header("Target")]
     public Transform target;
+    public Rigidbody2D targetRb;
 
     [Header("Follow")]
+    public Vector2 baseOffset = Vector2.zero;
     public float smoothTime = 0.15f;
-    public Vector2 offset;
+    public bool snapToTargetOnStart = true;
 
     [Header("Dead Zone")]
-    public Vector2 deadZoneSize = new Vector2(2f, 1.5f);
+    public bool useDeadZone = true;
+    public Vector2 deadZoneSize = new Vector2(2.5f, 1.5f);
 
     [Header("Look Ahead")]
     public bool useLookAhead = true;
-    public float lookAheadAmount = 1.5f;
-    public float lookAheadSmoothTime = 0.2f;
-    public float lookAheadMoveThreshold = 0.05f;
+    public float lookAheadDistanceX = 2.5f;
+    public float lookAheadDistanceY = 1.5f;
+    public float lookAheadSmoothTime = 0.12f;
+    public float movementThreshold = 0.05f;
+    public float returnToCenterSpeed = 2.5f;
 
-    [Header("Camera Bounds")]
-    public bool useBounds = true;
+    [Header("Fall / Jump Bias")]
+    public bool useVerticalFallBias = true;
+    public float fallingOffsetY = -1.5f;
+    public float fallingSpeedThreshold = -0.1f;
+    public float verticalBiasSmoothTime = 0.2f;
+
+    [Header("Bounds")]
+    public bool useBounds = false;
     public Vector2 minCameraPosition;
     public Vector2 maxCameraPosition;
 
-    private Vector3 velocity;
-    private Vector3 currentLookAhead;
-    private Vector3 lookAheadVelocity;
-    private Vector3 lastTargetPosition;
+    [Header("Debug")]
+    public bool drawLookAheadGizmo = true;
 
     private Camera cam;
+
+    private Vector3 followVelocity;
+    private Vector3 lookAheadCurrent;
+    private Vector3 lookAheadVelocity;
+    private float verticalBiasCurrent;
+    private float verticalBiasVelocity;
+
+    private Vector3 lastTargetPosition;
 
     private void Awake()
     {
@@ -37,14 +55,17 @@ public class DynamicCamera2D : MonoBehaviour
 
     private void Start()
     {
-        if (target != null)
-        {
-            lastTargetPosition = target.position;
+        if (target == null)
+            return;
 
-            Vector3 startPos = transform.position;
-            startPos.x = target.position.x + offset.x;
-            startPos.y = target.position.y + offset.y;
-            startPos.z = transform.position.z;
+        if (targetRb == null)
+            targetRb = target.GetComponent<Rigidbody2D>();
+
+        lastTargetPosition = target.position;
+
+        if (snapToTargetOnStart)
+        {
+            Vector3 startPos = GetDesiredCameraCenterImmediate();
             transform.position = ClampToBounds(startPos);
         }
     }
@@ -54,87 +75,171 @@ public class DynamicCamera2D : MonoBehaviour
         if (target == null)
             return;
 
-        Vector3 cameraPos = transform.position;
-        Vector3 targetPos = target.position + (Vector3)offset;
+        Vector2 movement = GetTargetMovement();
+        UpdateLookAhead(movement);
+        UpdateVerticalBias();
 
-        Vector3 targetDelta = target.position - lastTargetPosition;
+        Vector3 desiredCenter = GetDesiredCameraCenter();
+        Vector3 nextPosition;
 
-        Vector3 desiredLookAhead = Vector3.zero;
-
-        if (useLookAhead)
+        if (useDeadZone)
         {
-            if (Mathf.Abs(targetDelta.x) > lookAheadMoveThreshold)
-            {
-                desiredLookAhead.x = Mathf.Sign(targetDelta.x) * lookAheadAmount;
-            }
-            else
-            {
-                desiredLookAhead.x = 0f;
-            }
-
-            currentLookAhead = Vector3.SmoothDamp(
-                currentLookAhead,
-                desiredLookAhead,
-                ref lookAheadVelocity,
-                lookAheadSmoothTime
-            );
+            nextPosition = ApplyDeadZone(transform.position, desiredCenter);
         }
         else
         {
-            currentLookAhead = Vector3.zero;
+            nextPosition = desiredCenter;
         }
 
-        targetPos += currentLookAhead;
+        nextPosition.z = transform.position.z;
 
-        float deadZoneLeft = cameraPos.x - deadZoneSize.x * 0.5f;
-        float deadZoneRight = cameraPos.x + deadZoneSize.x * 0.5f;
-        float deadZoneBottom = cameraPos.y - deadZoneSize.y * 0.5f;
-        float deadZoneTop = cameraPos.y + deadZoneSize.y * 0.5f;
-
-        Vector3 newTargetPos = cameraPos;
-
-        if (targetPos.x < deadZoneLeft)
-        {
-            newTargetPos.x = targetPos.x + deadZoneSize.x * 0.5f;
-        }
-        else if (targetPos.x > deadZoneRight)
-        {
-            newTargetPos.x = targetPos.x - deadZoneSize.x * 0.5f;
-        }
-
-        if (targetPos.y < deadZoneBottom)
-        {
-            newTargetPos.y = targetPos.y + deadZoneSize.y * 0.5f;
-        }
-        else if (targetPos.y > deadZoneTop)
-        {
-            newTargetPos.y = targetPos.y - deadZoneSize.y * 0.5f;
-        }
-
-        newTargetPos.z = transform.position.z;
-
-        Vector3 smoothedPos = Vector3.SmoothDamp(
+        Vector3 smoothed = Vector3.SmoothDamp(
             transform.position,
-            newTargetPos,
-            ref velocity,
+            nextPosition,
+            ref followVelocity,
             smoothTime
         );
 
-        transform.position = ClampToBounds(smoothedPos);
+        transform.position = ClampToBounds(smoothed);
 
         lastTargetPosition = target.position;
     }
 
+    private Vector2 GetTargetMovement()
+    {
+        if (targetRb != null)
+        {
+            return targetRb.linearVelocity;
+        }
+
+        Vector3 delta = target.position - lastTargetPosition;
+        return delta / Mathf.Max(Time.deltaTime, 0.0001f);
+    }
+
+    private void UpdateLookAhead(Vector2 movement)
+    {
+        if (!useLookAhead)
+        {
+            lookAheadCurrent = Vector3.zero;
+            return;
+        }
+
+        Vector3 desiredLookAhead = Vector3.zero;
+
+        if (Mathf.Abs(movement.x) > movementThreshold)
+        {
+            desiredLookAhead.x = Mathf.Sign(movement.x) * lookAheadDistanceX;
+        }
+        else
+        {
+            desiredLookAhead.x = Mathf.MoveTowards(
+                lookAheadCurrent.x,
+                0f,
+                returnToCenterSpeed * Time.deltaTime
+            );
+        }
+
+        if (Mathf.Abs(movement.y) > movementThreshold)
+        {
+            desiredLookAhead.y = Mathf.Sign(movement.y) * lookAheadDistanceY;
+        }
+        else
+        {
+            desiredLookAhead.y = Mathf.MoveTowards(
+                lookAheadCurrent.y,
+                0f,
+                returnToCenterSpeed * Time.deltaTime
+            );
+        }
+
+        lookAheadCurrent = Vector3.SmoothDamp(
+            lookAheadCurrent,
+            desiredLookAhead,
+            ref lookAheadVelocity,
+            lookAheadSmoothTime
+        );
+    }
+
+    private void UpdateVerticalBias()
+    {
+        float targetBias = 0f;
+
+        if (useVerticalFallBias)
+        {
+            float verticalSpeed = 0f;
+
+            if (targetRb != null)
+                verticalSpeed = targetRb.linearVelocity.y;
+            else
+                verticalSpeed = (target.position.y - lastTargetPosition.y) / Mathf.Max(Time.deltaTime, 0.0001f);
+
+            if (verticalSpeed < fallingSpeedThreshold)
+                targetBias = fallingOffsetY;
+        }
+
+        verticalBiasCurrent = Mathf.SmoothDamp(
+            verticalBiasCurrent,
+            targetBias,
+            ref verticalBiasVelocity,
+            verticalBiasSmoothTime
+        );
+    }
+
+    private Vector3 GetDesiredCameraCenter()
+    {
+        Vector3 desired = target.position;
+        desired += (Vector3)baseOffset;
+        desired += lookAheadCurrent;
+        desired.y += verticalBiasCurrent;
+        desired.z = transform.position.z;
+        return desired;
+    }
+
+    private Vector3 GetDesiredCameraCenterImmediate()
+    {
+        Vector3 desired = target.position + (Vector3)baseOffset;
+        desired.z = transform.position.z;
+        return desired;
+    }
+
+    private Vector3 ApplyDeadZone(Vector3 currentCameraPos, Vector3 desiredTargetPos)
+    {
+        Vector3 result = currentCameraPos;
+
+        float left = currentCameraPos.x - deadZoneSize.x * 0.5f;
+        float right = currentCameraPos.x + deadZoneSize.x * 0.5f;
+        float bottom = currentCameraPos.y - deadZoneSize.y * 0.5f;
+        float top = currentCameraPos.y + deadZoneSize.y * 0.5f;
+
+        if (desiredTargetPos.x < left)
+            result.x = desiredTargetPos.x + deadZoneSize.x * 0.5f;
+        else if (desiredTargetPos.x > right)
+            result.x = desiredTargetPos.x - deadZoneSize.x * 0.5f;
+
+        if (desiredTargetPos.y < bottom)
+            result.y = desiredTargetPos.y + deadZoneSize.y * 0.5f;
+        else if (desiredTargetPos.y > top)
+            result.y = desiredTargetPos.y - deadZoneSize.y * 0.5f;
+
+        result.z = currentCameraPos.z;
+        return result;
+    }
+
     private Vector3 ClampToBounds(Vector3 position)
     {
-        if (!useBounds)
+        if (!useBounds || cam == null || !cam.orthographic)
             return position;
 
         float halfHeight = cam.orthographicSize;
         float halfWidth = halfHeight * cam.aspect;
 
-        position.x = Mathf.Clamp(position.x, minCameraPosition.x + halfWidth, maxCameraPosition.x - halfWidth);
-        position.y = Mathf.Clamp(position.y, minCameraPosition.y + halfHeight, maxCameraPosition.y - halfHeight);
+        float minX = minCameraPosition.x + halfWidth;
+        float maxX = maxCameraPosition.x - halfWidth;
+        float minY = minCameraPosition.y + halfHeight;
+        float maxY = maxCameraPosition.y - halfHeight;
+
+        position.x = Mathf.Clamp(position.x, minX, maxX);
+        position.y = Mathf.Clamp(position.y, minY, maxY);
 
         return position;
     }
@@ -150,11 +255,17 @@ public class DynamicCamera2D : MonoBehaviour
         if (useBounds)
         {
             Gizmos.color = Color.green;
-
             Vector2 center = (minCameraPosition + maxCameraPosition) * 0.5f;
             Vector2 size = maxCameraPosition - minCameraPosition;
-
             Gizmos.DrawWireCube(center, size);
+        }
+
+        if (drawLookAheadGizmo && target != null)
+        {
+            Gizmos.color = Color.cyan;
+            Vector3 desired = target.position + (Vector3)baseOffset + lookAheadCurrent;
+            Gizmos.DrawLine(target.position, desired);
+            Gizmos.DrawWireSphere(desired, 0.15f);
         }
     }
 }

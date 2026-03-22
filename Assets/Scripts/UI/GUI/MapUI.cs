@@ -22,8 +22,8 @@ public class MapUI : MonoBehaviour
         seq.Insert(0, mapGroup.DOFade(1f, 0.2f));
         
         // move main group
-        seq.Insert(0, mapGroupTransform.DOAnchorPos(new Vector2(-610f, -210f), 0.3f).SetEase(Ease.OutBack));
-        seq.Insert(0, mapGroupTransform.DOSizeDelta(new Vector2(450f, 450f), 0.3f).SetEase(Ease.OutBack));
+        seq.Insert(0, mapGroupTransform.DOAnchorPos(new Vector2(275f, 275f), 0.3f).SetEase(Ease.OutBack));
+        seq.Insert(0, mapGroupTransform.DOSizeDelta(new Vector2(400f, 400f), 0.3f).SetEase(Ease.OutBack));
         
         seq.OnComplete(() => ReferenceManager.lockAllInteractions = false);
     }
@@ -41,7 +41,7 @@ public class MapUI : MonoBehaviour
         seq.Insert(0, mapGroup.DOFade(0f, 0.2f));
         
         // move main group
-        seq.Insert(0, mapGroupTransform.DOAnchorPos(new Vector2(-850f, -435f), 0.5f).SetEase(Ease.OutQuint));
+        seq.Insert(0, mapGroupTransform.DOAnchorPos(new Vector2(105f, 98f), 0.5f).SetEase(Ease.OutQuint));
         seq.Insert(0, mapGroupTransform.DOSizeDelta(new Vector2(100f, 100f), 0.5f).SetEase(Ease.OutQuint));
         
         seq.OnComplete(() => ReferenceManager.lockAllInteractions = false);

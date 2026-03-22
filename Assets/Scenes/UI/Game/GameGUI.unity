@@ -343,17 +343,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1178995615655567393, guid: 5cc6080d065b4479c8ea738765e2f3c6, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1913597580321621234, guid: 5cc6080d065b4479c8ea738765e2f3c6, type: 3}
       propertyPath: m_Name
       value: GameUI (Canvas)
       objectReference: {fileID: 0}
-    - target: {fileID: 5738503676128730856, guid: 5cc6080d065b4479c8ea738765e2f3c6, type: 3}
-      propertyPath: beatSpeed
-      value: 150
+    - target: {fileID: 6666228864158880074, guid: 5cc6080d065b4479c8ea738765e2f3c6, type: 3}
+      propertyPath: m_Alpha
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6924781924339795540, guid: 5cc6080d065b4479c8ea738765e2f3c6, type: 3}
       propertyPath: m_AnchorMax.x
@@ -447,9 +443,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9080427578639229924, guid: 5cc6080d065b4479c8ea738765e2f3c6, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 2
+    - target: {fileID: 8147835666819307356, guid: 5cc6080d065b4479c8ea738765e2f3c6, type: 3}
+      propertyPath: m_Alpha
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

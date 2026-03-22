@@ -389,6 +389,12 @@ MonoBehaviour:
   DrinkSound: {fileID: 3358224228889953529}
   indicator: {fileID: 276346491981393709}
   winScene: 
+  itemObjectives:
+  - {fileID: 0}
+  - {fileID: 3580676213028389754, guid: ea7f96c824e6a42d2ad7fa22207070b7, type: 3}
+  - {fileID: 3580676213028389754, guid: 357440415f80f412ab20502363a778aa, type: 3}
+  - {fileID: 3580676213028389754, guid: 1eca25bdb751f475095655611dcff8f3, type: 3}
+  - {fileID: 3580676213028389754, guid: bb0f04faad1034465a92bca62f0181ad, type: 3}
 --- !u!50 &3402016789487743225
 Rigidbody2D:
   serializedVersion: 5
@@ -450,7 +456,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.015381336, y: -0.15692902}
+  m_Offset: {x: -0.015381336, y: -1.7398801}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -460,7 +466,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.7075329, y: 8.807386}
+  m_Size: {x: 1.7075329, y: 5.6414843}
   m_EdgeRadius: 0
 --- !u!95 &6539812920575387050
 Animator:

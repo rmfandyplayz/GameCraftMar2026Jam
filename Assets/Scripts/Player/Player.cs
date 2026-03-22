@@ -68,6 +68,9 @@ public class Player : MonoBehaviour
 
     private bool canUseBottle = false;
 
+    [Header("Objectives")]
+    public GameObject[] itemObjectives;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -192,6 +195,7 @@ public class Player : MonoBehaviour
         else
         {
             OnPickupItem.Invoke(Sprites[id]);
+            Instantiate(itemObjectives[id], transform.position, Quaternion.identity);
         }
 
         useLockTimer = 0.1f;
@@ -253,12 +257,19 @@ public class Player : MonoBehaviour
     public void CanInteractWithBaby()
     {
         canUseBottle = true;
-        indicator.SetActive(true);
+        if (ItemId == 4)
+        {
+            indicator.SetActive(true);
+        }
     }
 
     public void CantInteractWithBaby()
     {
         canUseBottle = false;
-        indicator.SetActive(false);
+
+        if (ItemId == 4)
+        {
+            indicator.SetActive(true);
+        }
     }
 }

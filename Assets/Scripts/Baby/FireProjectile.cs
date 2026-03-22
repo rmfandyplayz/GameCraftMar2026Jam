@@ -11,7 +11,6 @@ public class FireProjectile : MonoBehaviour
     
     [SerializeField] private float stopMovingTime = .3f;
     [SerializeField] private float growTime = 3f;
-    [SerializeField] private bool canFly;
     
     private Player player;
     // Start is called once before the first execution of Update after the MonoBehaviour is created

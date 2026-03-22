@@ -15,6 +15,7 @@ namespace Baby
         [SerializeField] private float mindControlRate = 4f;
         [SerializeField] private float mcRadius = 3f;
         [SerializeField] private float mcDuration = 3f;
+        [SerializeField] private bool canFly;
         
         [SerializeField] private GameObject laserPrefab;
         [SerializeField] private GameObject shardPrefab;

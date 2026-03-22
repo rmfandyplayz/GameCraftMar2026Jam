@@ -37,16 +37,22 @@ public class UIButtonFrameAnims : MonoBehaviour, IPointerEnterHandler, IPointerE
 
     public void OnPointerEnter(PointerEventData eventData) 
     {
+        Debug.Log("enter");
         isHovering = true;
-        if (wasInteractable) 
+        if (wasInteractable)
+        {
             targetImage.DOPlaySprites(hoverFrames, timePerFrame);
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData) 
     {
+        Debug.Log("exit");
         isHovering = false;
-        if (wasInteractable) 
+        if (wasInteractable)
+        {
             targetImage.DOPlaySprites(normalFrames, timePerFrame);
+        }
     }
 
     private void UpdateVisuals()

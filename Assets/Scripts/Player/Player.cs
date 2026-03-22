@@ -108,11 +108,6 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        if (FindAnyObjectByType<PlayerController>() == null)
-        {
-            gameObject.AddComponent<PlayerController>();
-        }
-
         sceneTrans = FindFirstObjectByType<SceneTransition>();
     }
 

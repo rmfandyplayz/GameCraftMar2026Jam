@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -5198968318917990948, guid: 344d93bb64dcbba4b9085aef7a165042, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -89,6 +89,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HeartUI
   heartImage: {fileID: 1223485370626345286}
-  fullHeartFrames: []
-  emptyHeartFrame: {fileID: 0}
-  beatSpeed: 0
+  fullHeartFrames:
+  - {fileID: -5198968318917990948, guid: 344d93bb64dcbba4b9085aef7a165042, type: 3}
+  - {fileID: 8891957496307346206, guid: b488d7b7330f2414d818d75a0634eed3, type: 3}
+  - {fileID: 21300000, guid: 8e1e5efce0d214782b3150a5e3f6b580, type: 3}
+  emptyHeartFrame: {fileID: 8379351761407150846, guid: 3366fb7ae026e4454b8bfa860bd1a345, type: 3}
+  beatSpeed: 60

@@ -27,7 +27,7 @@ public class HealthUIManager : MonoBehaviour
             playerRef.OnHPChanged.RemoveListener(UpdateHearts);
     }
 
-    // call this from ur player or game manager when the level starts
+    // call this during start or smth
     public void InitHearts(int currentHP, int maxHP)
     {
         SetMaxHearts(maxHP);
@@ -40,6 +40,13 @@ public class HealthUIManager : MonoBehaviour
             // uses ur silent init method
             hearts[i].SetState(i < currentHP);
         }
+        RefreshBeatingHeart(currentHP);
+    }
+
+    // TODO: delete when done
+    public void InitHPTEST()
+    {
+        InitHearts(3, 3);
     }
     
     public void SetMaxHearts(int maxHP)
@@ -50,7 +57,7 @@ public class HealthUIManager : MonoBehaviour
         }
     }
 
-    private void UpdateHearts(int currentHP)
+    public void UpdateHearts(int currentHP)
     {
         if (currentHP == previousHP) return;
 
@@ -74,5 +81,21 @@ public class HealthUIManager : MonoBehaviour
 
         // cache it for the next time player takes damage
         previousHP = currentHP;
+        RefreshBeatingHeart(currentHP);
+    }
+    
+    private void RefreshBeatingHeart(int currentHP)
+    {
+        for (int i = 0; i < hearts.Count; i++)
+        {
+            if (!hearts[i].gameObject.activeSelf) 
+                continue;
+
+            // the rightmost full heart is at index hp - 1
+            // e.g. if u have 3 hp, index 2 is the rightmost. 
+            bool isRightmost = (i == currentHP - 1);
+        
+            hearts[i].SetBeating(isRightmost); 
+        }
     }
 }

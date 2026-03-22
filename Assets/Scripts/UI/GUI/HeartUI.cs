@@ -12,13 +12,13 @@ public class HeartUI : MonoBehaviour
     [SerializeField, Tooltip("in bpm")] float beatSpeed; // bpm
 
     private bool isFull = true;
+    private Tween heartBeatTween;
 
     void Start()
     {
         if (isFull)
         {
             heartImage.DOPlaySprites(fullHeartFrames, 0.3f);
-            PlayHeartbeat();
         }
         else
         {
@@ -38,8 +38,7 @@ public class HeartUI : MonoBehaviour
         isFull = filled;
         if (isFull)
         {
-            heartImage.DOPlaySprites(fullHeartFrames, 0.3f);            
-            PlayHeartbeat();
+            heartImage.DOPlaySprites(fullHeartFrames, 0.3f);
         }
         else
         {
@@ -62,17 +61,25 @@ public class HeartUI : MonoBehaviour
         heartImage.DOKill(true);
         isFull = true;
         heartImage.DOPlaySprites(fullHeartFrames, 0.3f);
-        PlayHeartbeat();
     }
-    
+
+    public void SetBeating(bool beat)
+    {
+        heartBeatTween?.Kill();
+        heartImage.transform.localScale = Vector3.one;
+        
+        if(beat && isFull)
+        {
+            PlayHeartbeat();
+        }
+    }
     
     private void PlayHeartbeat()
     {
         float secondsPerBeat = 60f / Mathf.Max(beatSpeed, 0.01f);
-
         heartImage.transform.localScale = Vector3.one;
 
-        DOTween.Sequence()
+        heartBeatTween = DOTween.Sequence()
             .SetTarget(heartImage) // so DOKill() works
             .Append(heartImage.transform.DOScale(1.15f, secondsPerBeat * 0.15f).SetEase(Ease.OutQuad))
             .Append(heartImage.transform.DOScale(0.95f, secondsPerBeat * 0.10f).SetEase(Ease.InOutQuad))

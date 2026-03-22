@@ -67,16 +67,11 @@ namespace Baby
                         laserTimer = 0;
                     }
                 }
-                    
-                {
-                    Quaternion angle = Quaternion.Euler(0, 0, 0);
-                    GameObject fire = Instantiate(firePrefab, transform.position, angle);
-                    FireProjectile proj = fire.GetComponent<FireProjectile>();
-                    proj.moveDir = fire.transform.up;
-                }
+                
                 
                 if (moveTimer >= chillTime)
                 {
+                    Debug.Log(currentNode.location);
                     movement.MoveTo(currentNode, nextGoal);
                     if (currentNode.location == NodeLocation.PlayRoom)
                     {

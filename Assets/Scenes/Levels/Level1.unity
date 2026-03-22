@@ -15139,7 +15139,6 @@ MonoBehaviour:
   adjacentNodes:
   - {fileID: 2117426062}
   - {fileID: 893581371}
-  - {fileID: 475043164}
   isGoalNode: 0
   location: 3
 --- !u!4 &296313517
@@ -17214,7 +17213,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Baby.MovementNode
   adjacentNodes:
   - {fileID: 1485616543}
-  - {fileID: 490168674}
   isGoalNode: 0
   location: 3
 --- !u!4 &816673372
@@ -17401,9 +17399,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Baby.MovementNode
   adjacentNodes:
   - {fileID: 1676775516}
-  - {fileID: 1507741094}
-  - {fileID: 1435378486}
   - {fileID: 250262653}
+  - {fileID: 1435378486}
   isGoalNode: 0
   location: 3
 --- !u!4 &863490172
@@ -19708,9 +19705,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Baby.MovementNode
   adjacentNodes:
-  - {fileID: 863490171}
-  - {fileID: 490168674}
-  - {fileID: 1939109968}
   - {fileID: 757095049}
   - {fileID: 382714074}
   isGoalNode: 0
@@ -20300,7 +20294,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Baby.MovementNode
   adjacentNodes:
   - {fileID: 2117426062}
-  - {fileID: 1195540636}
   - {fileID: 863490171}
   isGoalNode: 0
   location: 3
@@ -30395,9 +30388,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Baby.MovementNode
   adjacentNodes:
-  - {fileID: 1507741094}
-  - {fileID: 1435378486}
   - {fileID: 1485616543}
+  - {fileID: 1435378486}
   isGoalNode: 0
   location: 3
 --- !u!4 &1939109969

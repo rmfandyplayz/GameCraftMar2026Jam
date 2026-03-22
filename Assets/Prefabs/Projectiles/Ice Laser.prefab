@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e4a1ed189f840fbbb4bc47e8b23cb37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LaserProjectile
-  moveSpeed: 0.05
+  moveSpeed: 0.1
   audioRadius: 4
 --- !u!61 &5601936307251028217
 BoxCollider2D:

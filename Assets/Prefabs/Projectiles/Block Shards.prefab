@@ -107,7 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BlockShards
   moveSpeed: 0.1
   moveDir: {x: 0, y: 0}
-  shardsStopMovingTime: 0.1
+  shardsStopMovingTime: 0.2
 --- !u!61 &7116680302674740679
 BoxCollider2D:
   m_ObjectHideFlags: 0

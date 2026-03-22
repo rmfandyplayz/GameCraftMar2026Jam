@@ -30920,6 +30920,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 276346491981393709, guid: 07e71c9bf318246d58a4973dd09bdb1d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 623697741000674219, guid: 07e71c9bf318246d58a4973dd09bdb1d, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -30939,6 +30943,10 @@ PrefabInstance:
     - target: {fileID: 2190897422551471469, guid: 07e71c9bf318246d58a4973dd09bdb1d, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2414399822389308172, guid: 07e71c9bf318246d58a4973dd09bdb1d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3184811589194814197, guid: 07e71c9bf318246d58a4973dd09bdb1d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -31004,9 +31012,17 @@ PrefabInstance:
       propertyPath: itemObjectives.Array.size
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6108626783609490662, guid: 07e71c9bf318246d58a4973dd09bdb1d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6547232403196895550, guid: 07e71c9bf318246d58a4973dd09bdb1d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Level5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228185846302427405, guid: 07e71c9bf318246d58a4973dd09bdb1d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

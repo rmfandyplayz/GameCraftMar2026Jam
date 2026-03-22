@@ -12,6 +12,9 @@ public class Player : MonoBehaviour
     public float speed = 5;
     public int ItemId = 0;
 
+    [HideInInspector]
+    public bool canMove = true;
+
     [Header("Items")]
     public SpriteRenderer ItemSprite;
     public GameObject CoffeeItem;
@@ -93,7 +96,9 @@ public class Player : MonoBehaviour
     {
         useLockTimer -= Time.deltaTime;
 
-        move = moveAction.ReadValue<Vector2>().normalized;
+        if (canMove){
+            move = moveAction.ReadValue<Vector2>().normalized;
+        }
 
         // I-FRAME TIMER + FLASH
         if (isInvincible)

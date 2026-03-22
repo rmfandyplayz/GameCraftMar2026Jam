@@ -48,7 +48,6 @@ namespace Baby
                 if (moveTimer >= chillTime)
                 {
                     movement.MoveTo(currentNode, nextGoal);
-
                     if (currentNode.location == NodeLocation.PlayRoom)
                     {
                         for (int i = 0; i <= 360; i += 30)

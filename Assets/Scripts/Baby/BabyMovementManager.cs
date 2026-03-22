@@ -12,11 +12,14 @@ namespace Baby
         private List<Connection> connections;
         [SerializeField] private float moveSpeed;
         [HideInInspector] public bool isMoving;
+        private Animator anim;
         
         void Awake()
         {
             goalNodes = new();
             connections = new();
+            anim = GetComponent<Animator>();
+            
             nodes = FindObjectsByType<MovementNode>(FindObjectsSortMode.None);
             foreach (MovementNode node1 in nodes)
             {
@@ -106,8 +109,10 @@ namespace Baby
 
         private IEnumerator TravelPath(List<MovementNode> path)
         {
+            anim.SetBool("isMoving", true);
             foreach (MovementNode node in path)
             {
+                Debug.Log(anim.GetBool("isMoving"));
                 Vector3 targetPosition = node.transform.position;
 
                 // Move towards this node until we reach it
@@ -124,6 +129,7 @@ namespace Baby
 
                 transform.position = targetPosition;
             }
+            anim.SetBool("isMoving" , false);
             isMoving = false;
         }
 

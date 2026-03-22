@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 
 public class BabyMindController : MonoBehaviour
 {
-    public Player player;
+    private Player player;
     private float timer;
 
     private void OnEnable()

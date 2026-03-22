@@ -25,8 +25,8 @@ public class ObjectivesUI : MonoBehaviour
         seq.Insert(0, objectiveGroup.DOFade(1f, 0.2f));
         
         // move main group
-        seq.Insert(0, mapGroupTransform.DOAnchorPos(new Vector2(-345f, -300f), 0.3f).SetEase(Ease.OutBack));
-        seq.Insert(0, mapGroupTransform.DOSizeDelta(new Vector2(1040f, 305f), 0.3f).SetEase(Ease.OutBack));
+        seq.Insert(0, mapGroupTransform.DOAnchorPos(new Vector2(507f, 204f), 0.3f).SetEase(Ease.OutBack));
+        seq.Insert(0, mapGroupTransform.DOSizeDelta(new Vector2(888f, 265f), 0.3f).SetEase(Ease.OutBack));
         
         seq.OnComplete(() => ReferenceManager.lockAllInteractions = false);
     }
@@ -44,7 +44,7 @@ public class ObjectivesUI : MonoBehaviour
         seq.Insert(0, objectiveGroup.DOFade(0f, 0.2f));
         
         // move main group
-        seq.Insert(0, mapGroupTransform.DOAnchorPos(new Vector2(-700f, -435f), 0.5f).SetEase(Ease.OutQuint));
+        seq.Insert(0, mapGroupTransform.DOAnchorPos(new Vector2(255f, 98f), 0.5f).SetEase(Ease.OutQuint));
         seq.Insert(0, mapGroupTransform.DOSizeDelta(new Vector2(100f, 100f), 0.5f).SetEase(Ease.OutQuint));
         
         seq.OnComplete(() => ReferenceManager.lockAllInteractions = false);

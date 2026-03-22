@@ -33,6 +33,7 @@ namespace Baby
         {
             movement = GetComponent<BabyMovementManager>();
             mindControl = GetComponent<BabyMindController>();
+            anim = GetComponent<Animator>();
             mindControl.enabled = false;
             nextGoal = movement.goalNodes[Random.Range(0, movement.goalNodes.Count)];
             while (nextGoal == currentNode)
@@ -54,8 +55,16 @@ namespace Baby
                 {
                     anim.SetBool("isMoving", false);
                     anim.SetBool("isFlying", false);
-                    anim.SetBool("isIdle", false);
                     anim.SetBool("isIdle", true);
+                    anim.SetBool("isPlaying", false);
+                }
+                
+                if (currentNode.location == NodeLocation.PlayRoom)
+                {
+                    anim.SetBool("isMoving", false);
+                    anim.SetBool("isFlying", false);
+                    anim.SetBool("isIdle", false);
+                    anim.SetBool("isPlaying", true);
                 }
                 
                 if (moveTimer >= chillTime)

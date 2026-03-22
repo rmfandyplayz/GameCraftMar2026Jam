@@ -53,6 +53,9 @@ public class Player : MonoBehaviour
     private InputAction moveAction;
     private InputAction useAction;
 
+    private GameObject baby;
+    [SerializeField] private MovementNode cribPos;
+
     private Rigidbody2D rb;
 
     private SceneTransition sceneTrans;
@@ -74,12 +77,12 @@ public class Player : MonoBehaviour
     [Header("Objectives")]
     public GameObject[] itemObjectives;
     public bool isFireQuest = false;
-
-    public bool crib = false;
+    
     public bool dark = true;
 
     private void Awake()
     {
+        baby = FindAnyObjectByType<BabyController>().gameObject;
         rb = GetComponent<Rigidbody2D>();
 
         moveAction = new InputAction("Move", InputActionType.Value);
@@ -245,7 +248,7 @@ public class Player : MonoBehaviour
 
         if (ItemId == 5)
         {
-            if ((crib == true) || (dark == true))
+            if ((baby.transform.position == cribPos.transform.position) && (dark == true))
             {
                 sceneTrans.LoadScene(winScene);
                 PlayerPickup(0);

@@ -3,19 +3,20 @@ using DG.Tweening;
 using UnityEngine.UI;
 using System;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 // written by andy
 // handles multi-item transitions in the main menu
 public class MainMenuManager : MonoBehaviour
 {
-
     [SerializeField] private CanvasGroup buttonGroup;
+    [SerializeField] private Image creditsGroup;
 
     private bool lockAllOperations; // disallow all buttons from being interacted with
 
     public void StartGame()
     {
-        
+        SceneManager.LoadScene("Comic1");
     }
 
     public void OpenSettings()
@@ -26,6 +27,16 @@ public class MainMenuManager : MonoBehaviour
     public void OpenCredits()
     {
         
+    }
+
+    public void CloseCredits()
+    {
+        
+    }
+
+    public void CloseGame()
+    {
+        Application.Quit();
     }
 
     /// <summary>

@@ -2,15 +2,24 @@ using UnityEngine;
 
 public class Comic : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public GameObject[] comicStrips 
+
+    public int currentComicStrip = 0;
+
+    private int comicAmount = 4;
+    
+    void Update()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    void NextComic(){
+        currentComicStrip += 1;
         
+        if (currentComicStrip == comicAmount){
+            
+        }
+
+        comicStrips[currentComicStrip].SetActive(true);
     }
 }

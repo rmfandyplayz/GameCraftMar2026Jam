@@ -11,6 +11,10 @@ public class Comic : MonoBehaviour
     public SceneTransition sceneTrans;
     public string SceneName;
 
+    public GameObject tutorial;
+
+
+
     void Update()
     {
         // Space (keyboard) OR A button (gamepad)
@@ -25,6 +29,10 @@ public class Comic : MonoBehaviour
 
     void NextComic()
     {
+        if (currentComicStrip == 0){
+            tutorial.SetActive(false);
+        }
+        
         currentComicStrip += 1;
 
         if (currentComicStrip == comicAmount)

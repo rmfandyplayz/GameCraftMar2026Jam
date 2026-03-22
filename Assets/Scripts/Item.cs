@@ -19,6 +19,7 @@ public class Item : MonoBehaviour
     {     
         if (Input.GetKeyDown(KeyCode.E) && canInteract == true)
         {
+            player.DropCurrentItem();
             player.PlayerPickup(ID);
 
             if (DestroyOnPickup){

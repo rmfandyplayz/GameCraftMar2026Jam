@@ -11,6 +11,12 @@ public class Player : MonoBehaviour
     [Header("Stats")]
     public int health = 3;
     public float speed = 5;
+
+    // 0 = none
+    // 1 = coffee
+    // 2 = bottle
+    // 4 = filled bottle
+    // 3 = rattle
     public int ItemId = 0;
 
     [HideInInspector]
@@ -18,7 +24,7 @@ public class Player : MonoBehaviour
 
     [Header("Items")]
     public SpriteRenderer ItemSprite;
-    public GameObject CoffeeItem;
+    public GameObject[] ItemObjects;
     public GameObject RattleEffect;
 
     public Sprite[] Sprites;
@@ -52,6 +58,15 @@ public class Player : MonoBehaviour
 
     [Header("Sounds")]
     public GameObject hurtSound;
+    public AudioSource DrinkSound;
+
+    [Header("Visuals")]
+    public GameObject indicator;
+
+    [Header("Misc.")]
+    public string winScene;
+
+    private bool canUseBottle = false;
 
     private void Awake()
     {
@@ -175,7 +190,7 @@ public class Player : MonoBehaviour
         ItemId = id;
         ItemSprite.sprite = Sprites[id];
 
-        if (id > 0)
+        if (id == 0)
         {
             OnDropItem.Invoke();
         }
@@ -191,7 +206,7 @@ public class Player : MonoBehaviour
     {
         if (ItemId == 1)
         {
-            Instantiate(CoffeeItem, transform.position, Quaternion.identity);
+            Instantiate(ItemObjects[1], transform.position, Quaternion.identity);
             PlayerPickup(0);
         }
 
@@ -199,6 +214,17 @@ public class Player : MonoBehaviour
         {
             FindFirstObjectByType<BabyController>()?.SetGoalNode(transform.position);
             Instantiate(RattleEffect, transform.position, Quaternion.identity);
+        }
+
+        if (ItemId == 4)
+        {
+            if (canUseBottle == true)
+            {
+                DrinkSound.Play();
+                sceneTrans.LoadScene(winScene);
+
+                PlayerPickup(2);
+            }
         }
     }
 
@@ -219,5 +245,25 @@ public class Player : MonoBehaviour
         {
             sceneTrans.LoadScene(SceneManager.GetActiveScene().name);
         }
+    }
+
+    public void DropCurrentItem(){
+        if (ItemId == 0){
+            return;
+        }
+
+        Instantiate(ItemObjects[ItemId], transform.position, Quaternion.identity);
+    }
+
+    public void CanInteractWithBaby()
+    {
+        canUseBottle = true;
+        indicator.SetActive(true);
+    }
+
+    public void CantInteractWithBaby()
+    {
+        canUseBottle = false;
+        indicator.SetActive(false);
     }
 }

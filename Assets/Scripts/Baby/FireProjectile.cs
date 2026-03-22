@@ -43,5 +43,10 @@ public class FireProjectile : MonoBehaviour
         {
             growTime = timer;
         }
+
+        if (other.tag == "Ice")
+        {
+            Destroy(this.gameObject);
+        }
 }
 }

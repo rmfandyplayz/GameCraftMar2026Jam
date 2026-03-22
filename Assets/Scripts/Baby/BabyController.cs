@@ -21,6 +21,7 @@ namespace Baby
         [SerializeField] private GameObject firePrefab;
         
         private GameObject player;
+        private Animator anim;
         
         private BabyMovementManager movement;
         private BabyMindController mindControl;
@@ -47,11 +48,20 @@ namespace Baby
             if (!movement.isMoving)
             {
                 moveTimer += Time.deltaTime;
+
+                if (currentNode.location == NodeLocation.Kitchen)
+                {
+                    anim.SetBool("isMoving", false);
+                    anim.SetBool("isFlying", false);
+                    anim.SetBool("isFlying", false);
+                }
+                
                 if (moveTimer >= chillTime)
                 {
                     movement.MoveTo(currentNode, nextGoal);
                     if (currentNode.location == NodeLocation.PlayRoom)
                     {
+                        
                         for (int i = 0; i <= 360; i += 30)
                         {
                             Quaternion angle = Quaternion.Euler(0, 0, i);

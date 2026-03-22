@@ -6,9 +6,13 @@ public class FireProjectile : MonoBehaviour
     [HideInInspector] public Vector2 moveDir;
     [SerializeField] private float moveSpeed;
     [SerializeField] private float growSpeed;
+    
     private float timer;
+    
     [SerializeField] private float stopMovingTime = .3f;
     [SerializeField] private float growTime = 3f;
+    [SerializeField] private bool canFly;
+    
     private Player player;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

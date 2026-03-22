@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -7,18 +8,27 @@ namespace Baby
     {
         private float moveTimer;
         private float laserTimer;
+        private float mcTimer;
+        
         [SerializeField] private float chillTime = 5f;
         [SerializeField] private float shootRate = 3f;
+        [SerializeField] private float mindControlRate = 4f;
+        [SerializeField] private float mcRadius = 3f;
+        [SerializeField] private float mcDuration = 3f;
         
         [SerializeField] private GameObject laserPrefab;
         [SerializeField] private GameObject shardPrefab;
+        
         private BabyMovementManager movement;
+        private BabyMindController mindControl;
         [SerializeField] private MovementNode currentNode;
         private MovementNode nextGoal;
 
         void Start()
         {
             movement = GetComponent<BabyMovementManager>();
+            mindControl = GetComponent<BabyMindController>();
+            mindControl.enabled = false;
             nextGoal = movement.goalNodes[Random.Range(0, movement.goalNodes.Count)];
             while (nextGoal == currentNode)
             {
@@ -59,6 +69,8 @@ namespace Baby
             else
             {
                 laserTimer +=  Time.deltaTime;
+                mcTimer += Time.deltaTime;
+                
                 if (laserTimer >= shootRate)
                 {
                     Quaternion angle = Quaternion.Euler(0, 0, Random.Range(0f, 360f));
@@ -67,7 +79,25 @@ namespace Baby
                     proj.moveDir = laser.transform.right;
                     laserTimer = 0;
                 }
+
+                if (mcTimer >= mindControlRate)
+                {
+                    foreach (Collider2D hit in Physics2D.OverlapCircleAll(transform.position, mcRadius))
+                    {
+                        if (hit.tag == "Player")
+                        {
+                            mindControl.enabled = true;
+                            StartCoroutine(TimeMindControl());
+                        }
+                    }
+                }
             }
+        }
+
+        private IEnumerator TimeMindControl()
+        {
+            yield return new WaitForSeconds(mcDuration);
+            mindControl.enabled = false;
         }
 
         public void SetGoalNode(Vector3 pos)

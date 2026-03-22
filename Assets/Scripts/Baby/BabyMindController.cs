@@ -6,13 +6,12 @@ using Random = UnityEngine.Random;
 public class BabyMindController : MonoBehaviour
 {
     private Player player;
-    private PlayerController controller;
     private float timer;
 
     private void OnEnable()
     {
-        controller = FindAnyObjectByType<PlayerController>();
-        controller.enabled = false;
+        player = FindAnyObjectByType<Player>();
+        player.canMo
     }
 
     private void OnDisable()

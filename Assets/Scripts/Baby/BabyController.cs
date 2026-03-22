@@ -18,6 +18,8 @@ namespace Baby
         
         [SerializeField] private GameObject laserPrefab;
         [SerializeField] private GameObject shardPrefab;
+        [SerializeField] private GameObject firePrefab;
+        
         private GameObject player;
         
         private BabyMovementManager movement;
@@ -57,6 +59,14 @@ namespace Baby
                             BlockShards proj = shard.GetComponent<BlockShards>();
                             proj.moveDir = shard.transform.up;
                         }
+                    }
+                    
+                    if (currentNode.location == NodeLocation.Kitchen)
+                    {
+                        Quaternion angle = Quaternion.Euler(0, 0, 0);
+                        GameObject fire = Instantiate(firePrefab, transform.position, angle);
+                        FireProjectile proj = fire.GetComponent<FireProjectile>();
+                        proj.moveDir = fire.transform.up;
                     }
 
                     movement.isMoving = true;

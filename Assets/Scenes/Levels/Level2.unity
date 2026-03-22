@@ -17104,7 +17104,7 @@ MonoBehaviour:
   adjacentNodes:
   - {fileID: 1485616543}
   - {fileID: 490168674}
-  isGoalNode: 0
+  isGoalNode: 1
   location: 3
 --- !u!4 &816673372
 Transform:
@@ -17713,7 +17713,7 @@ MonoBehaviour:
   adjacentNodes:
   - {fileID: 475043164}
   - {fileID: 1676775516}
-  isGoalNode: 0
+  isGoalNode: 1
   location: 3
 --- !u!4 &1195540637
 Transform:

@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using DG.Tweening;
 
+// most of these written by gemini 3 pro/chatgpt 5.4 im way too lazy lmao
+// (and i dont know enough math to do these by myself within this timeframe)
 public static class UIDotweenExtensions
 {
     /// <summary>
@@ -36,5 +38,45 @@ public static class UIDotweenExtensions
             tween.SetLoops(-1, LoopType.Restart);
 
         return tween;
+    }
+    
+    public static Tween DOAnchorPosArc(
+        this RectTransform rectTransform,
+        Vector2 endValue,
+        float arcHeight,
+        float duration,
+        bool useCurrentAsStart = true)
+    {
+        Vector2 start = useCurrentAsStart ? rectTransform.anchoredPosition : rectTransform.anchoredPosition;
+
+        Vector2 control = (start + endValue) * 0.5f + Vector2.up * arcHeight;
+
+        return DOTween.To(() => 0f, t =>
+        {
+            rectTransform.anchoredPosition = EvaluateQuadraticBezier(t, start, control, endValue);
+        }, 1f, duration);
+    }
+
+    public static Tween DOAnchorPosArc(
+        this RectTransform rectTransform,
+        Vector2 startValue,
+        Vector2 endValue,
+        float arcHeight,
+        float duration)
+    {
+        rectTransform.anchoredPosition = startValue;
+
+        Vector2 control = (startValue + endValue) * 0.5f + Vector2.up * arcHeight;
+
+        return DOTween.To(() => 0f, t =>
+        {
+            rectTransform.anchoredPosition = EvaluateQuadraticBezier(t, startValue, control, endValue);
+        }, 1f, duration);
+    }
+
+    private static Vector2 EvaluateQuadraticBezier(float t, Vector2 p0, Vector2 p1, Vector2 p2)
+    {
+        float u = 1f - t;
+        return (u * u * p0) + (2f * u * t * p1) + (t * t * p2);
     }
 }

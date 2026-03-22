@@ -54,7 +54,8 @@ namespace Baby
                 {
                     anim.SetBool("isMoving", false);
                     anim.SetBool("isFlying", false);
-                    anim.SetBool("isFlying", false);
+                    anim.SetBool("isIdle", false);
+                    anim.SetBool("isIdle", true);
                 }
                 
                 if (moveTimer >= chillTime)

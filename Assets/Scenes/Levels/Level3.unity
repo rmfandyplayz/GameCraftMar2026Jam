@@ -30480,6 +30480,10 @@ PrefabInstance:
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5489891106828367638, guid: 07e71c9bf318246d58a4973dd09bdb1d, type: 3}
+      propertyPath: cribPos
+      value: 
+      objectReference: {fileID: 893581371}
+    - target: {fileID: 5489891106828367638, guid: 07e71c9bf318246d58a4973dd09bdb1d, type: 3}
       propertyPath: winScene
       value: Comic4
       objectReference: {fileID: 0}

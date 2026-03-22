@@ -16,6 +16,11 @@ public class HealthUIManager : MonoBehaviour
         InitHearts(3, 3);
     }
 
+    private void Start()
+    {
+        RefreshBeatingHeart(previousHP);
+    }
+
     private void OnEnable()
     {
         if (playerRef != null)

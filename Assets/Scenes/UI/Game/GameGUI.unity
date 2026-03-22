@@ -347,6 +347,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameUI (Canvas)
       objectReference: {fileID: 0}
+    - target: {fileID: 4100073746925587427, guid: 5cc6080d065b4479c8ea738765e2f3c6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4877342097209760533, guid: 339a85e4ec73e46ffa6b777c54d5ef25, type: 3}
+    - target: {fileID: 5103839255608193254, guid: 5cc6080d065b4479c8ea738765e2f3c6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 214.7109
+      objectReference: {fileID: 0}
+    - target: {fileID: 5103839255608193254, guid: 5cc6080d065b4479c8ea738765e2f3c6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 214.7109
+      objectReference: {fileID: 0}
+    - target: {fileID: 5103839255608193254, guid: 5cc6080d065b4479c8ea738765e2f3c6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 136
+      objectReference: {fileID: 0}
+    - target: {fileID: 5103839255608193254, guid: 5cc6080d065b4479c8ea738765e2f3c6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -148.03
+      objectReference: {fileID: 0}
     - target: {fileID: 6924781924339795540, guid: 5cc6080d065b4479c8ea738765e2f3c6, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -356,7 +376,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6924781924339795540, guid: 5cc6080d065b4479c8ea738765e2f3c6, type: 3}
-      propertyPath: m_SizeDelta.x
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7972015763269446380, guid: 5cc6080d065b4479c8ea738765e2f3c6, type: 3}

@@ -82,12 +82,14 @@ namespace Baby
 
                 if (mcTimer >= mindControlRate)
                 {
+                    mcTimer = 0;
                     foreach (Collider2D hit in Physics2D.OverlapCircleAll(transform.position, mcRadius))
                     {
                         if (hit.tag == "Player")
                         {
                             mindControl.enabled = true;
                             StartCoroutine(TimeMindControl());
+                            Debug.Log("hello");
                         }
                     }
                 }

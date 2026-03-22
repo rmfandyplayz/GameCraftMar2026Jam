@@ -11,12 +11,12 @@ public class BabyMindController : MonoBehaviour
     private void OnEnable()
     {
         player = FindAnyObjectByType<Player>();
-        player.canMo
+        player.canMove = false;
     }
 
     private void OnDisable()
     {
-        controller.enabled = true;
+        player.canMove = true;
     }
 
     private void Update()
@@ -28,7 +28,7 @@ public class BabyMindController : MonoBehaviour
         if (!(timer <= 0)) return;
         
         timer = 0.5f;
-        int rand = Random.Range(0, 3);
+        int rand = Random.Range(0, 4);
         player.move = rand switch
         {
             0 => Vector2.right,

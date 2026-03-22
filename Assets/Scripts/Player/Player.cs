@@ -59,14 +59,19 @@ public class Player : MonoBehaviour
     [Header("Sounds")]
     public GameObject hurtSound;
     public AudioSource DrinkSound;
+    public GameObject Music;
 
     [Header("Visuals")]
     public GameObject indicator;
+    public GameObject DeathScreen;
 
     [Header("Misc.")]
     public string winScene;
 
     private bool canUseBottle = false;
+
+    [Header("Objectives")]
+    public GameObject[] itemObjectives;
 
     private void Awake()
     {
@@ -192,6 +197,7 @@ public class Player : MonoBehaviour
         else
         {
             OnPickupItem.Invoke(Sprites[id]);
+            Instantiate(itemObjectives[id], transform.position, Quaternion.identity);
         }
 
         useLockTimer = 0.1f;
@@ -238,7 +244,9 @@ public class Player : MonoBehaviour
 
         if (health <= 0)
         {
-            sceneTrans.LoadScene(SceneManager.GetActiveScene().name);
+            DeathScreen.SetActive(true);
+            Music.SetActive(false);
+            canMove = false;
         }
     }
 
@@ -253,12 +261,19 @@ public class Player : MonoBehaviour
     public void CanInteractWithBaby()
     {
         canUseBottle = true;
-        indicator.SetActive(true);
+        if (ItemId == 4)
+        {
+            indicator.SetActive(true);
+        }
     }
 
     public void CantInteractWithBaby()
     {
         canUseBottle = false;
-        indicator.SetActive(false);
+
+        if (ItemId == 4)
+        {
+            indicator.SetActive(true);
+        }
     }
 }

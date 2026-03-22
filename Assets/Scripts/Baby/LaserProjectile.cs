@@ -9,8 +9,6 @@ public class LaserProjectile : DamagingObject
     [NonSerialized] public Vector2 moveDir;
 
     private Player player;
-    public AudioSource audioSource;
-
     private float timer;
     private int bounceCount;
 
@@ -55,18 +53,6 @@ public class LaserProjectile : DamagingObject
             transform.rotation = Quaternion.Euler(0, 0, angle);
 
             bounceCount++;
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            if (hasSoundPlayed == false)
-            {
-                audioSource.Play();
-                hasSoundPlayed = true;
-            }
         }
     }
 }

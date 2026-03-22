@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Coffee
   sceneTrans: {fileID: 0}
-  SceneName: CoffeeTest
+  SceneName: Comic2
 --- !u!1001 &2351858525890316522
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -129,6 +129,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1217836378972643262, guid: 174ef1f33cd2c4413b62de50faa5fb0a, type: 3}
+      propertyPath: m_Radius
+      value: 1.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 1217836378972643262, guid: 174ef1f33cd2c4413b62de50faa5fb0a, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1217836378972643262, guid: 174ef1f33cd2c4413b62de50faa5fb0a, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 2062846859374290856, guid: 174ef1f33cd2c4413b62de50faa5fb0a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14.66495

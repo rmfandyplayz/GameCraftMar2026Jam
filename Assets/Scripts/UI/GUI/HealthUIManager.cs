@@ -13,7 +13,7 @@ public class HealthUIManager : MonoBehaviour
     private void Awake()
     {
         playerRef = FindFirstObjectByType<Player>().GetComponent<Player>();
-        
+        InitHearts(3, 3);
     }
 
     private void OnEnable()

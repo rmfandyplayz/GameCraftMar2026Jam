@@ -46,6 +46,34 @@ namespace Baby
             if (!movement.isMoving)
             {
                 moveTimer += Time.deltaTime;
+                if (currentNode.location == NodeLocation.None)
+                {
+                    laserTimer +=  Time.deltaTime;
+                    if (laserTimer >= shootRate)
+                    {
+                        if (player != null)
+                        {
+                            //Lasers aim at player
+                            Vector2 direction = (player.transform.position - transform.position).normalized;
+
+                            Quaternion rotation = Quaternion.FromToRotation(Vector2.right, direction);
+
+                            GameObject laser = Instantiate(laserPrefab, transform.position, rotation);
+
+                            LaserProjectile proj = laser.GetComponent<LaserProjectile>();
+                            proj.moveDir = direction;
+                        }
+
+                        laserTimer = 0;
+                    }
+                }
+                    
+                {
+                    Quaternion angle = Quaternion.Euler(0, 0, 0);
+                    GameObject fire = Instantiate(firePrefab, transform.position, angle);
+                    FireProjectile proj = fire.GetComponent<FireProjectile>();
+                    proj.moveDir = fire.transform.up;
+                }
                 
                 if (moveTimer >= chillTime)
                 {

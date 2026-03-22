@@ -9,6 +9,7 @@ TagManager:
   - Projectile
   - Coffee
   - Fire
+  - Ice
   layers:
   - Default
   - TransparentFX

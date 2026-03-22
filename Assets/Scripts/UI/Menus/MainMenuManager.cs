@@ -26,12 +26,12 @@ public class MainMenuManager : MonoBehaviour
     
     public void OpenCredits()
     {
-        
+        creditsGroup.gameObject.SetActive(true);
     }
 
     public void CloseCredits()
     {
-        
+        creditsGroup.gameObject.SetActive(false);
     }
 
     public void CloseGame()

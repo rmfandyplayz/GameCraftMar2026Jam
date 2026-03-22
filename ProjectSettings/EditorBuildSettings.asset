@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Level4.unity
     guid: 512af3ce3511e4910bebdea41b32c14c
   - enabled: 1
+    path: Assets/Scenes/Levels/Level5.unity
+    guid: a5f8d5324f6ec4006bd71bb3fb9254e7
+  - enabled: 1
     path: Assets/Scenes/Comics/Comic1.unity
     guid: 8751d5e2fe89a490ca1f6b7836a7eaa7
   - enabled: 1
@@ -32,6 +35,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Comics/Comic3.unity
     guid: c128a4103fb704eddbf40f869edd9135
+  - enabled: 1
+    path: Assets/Scenes/Comics/Comic4.unity
+    guid: 7e77b39bf8d004a39bf61a4d719d6466
+  - enabled: 1
+    path: Assets/Scenes/Comics/Comic5.unity
+    guid: 121b4fae70e844209ac11f46b645415c
+  - enabled: 1
+    path: Assets/Scenes/Comics/Ending.unity
+    guid: 8cc75813019fb4f27bcea89f7bae9829
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

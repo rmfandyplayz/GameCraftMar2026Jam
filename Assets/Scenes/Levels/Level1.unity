@@ -31246,6 +31246,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Level1
       objectReference: {fileID: 0}
+    - target: {fileID: 6865242505476775046, guid: 07e71c9bf318246d58a4973dd09bdb1d, type: 3}
+      propertyPath: m_margin.w
+      value: -41.31407
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -31323,6 +31327,11 @@ PrefabInstance:
     - target: {fileID: 3580676213028389754, guid: 874d9ec98f52348d88b35cb3bc210225, type: 3}
       propertyPath: m_Name
       value: ObjectiveObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087767048555705841, guid: 874d9ec98f52348d88b35cb3bc210225, type: 3}
+      propertyPath: objectiveText
+      value: Get your coffee in the kitchen, then place it down with E. Have baby
+        lasers warm it up.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

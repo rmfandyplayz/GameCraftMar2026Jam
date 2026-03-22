@@ -496,6 +496,7 @@ GameObject:
   - component: {fileID: 818786469}
   - component: {fileID: 818786468}
   - component: {fileID: 818786467}
+  - component: {fileID: 818786470}
   m_Layer: 5
   m_Name: BasicSceneTrans
   m_TagString: Untagged
@@ -558,7 +559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -582,6 +583,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 818786465}
   m_CullTransparentMesh: 1
+--- !u!114 &818786470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818786465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3947630fe3473d419692a9c458c8997, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneTransition
+  sceneTrans: 1
+  transitionAnimator: {fileID: 818786467}
+  transitionDelay: 1
 --- !u!1 &1211642558
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,6 +721,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1232201551}
+  - component: {fileID: 1232201552}
   m_Layer: 0
   m_Name: Comic
   m_TagString: Untagged
@@ -727,6 +744,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1232201552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232201550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df7c220d3166347a88e8d127b958da74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Comic
+  comicStrips:
+  - {fileID: 1545938252}
+  - {fileID: 25953252}
+  - {fileID: 1211642558}
+  - {fileID: 111985467}
+  currentComicStrip: 0
+  sceneTrans: {fileID: 818786470}
+  SceneName: ComicTest
 --- !u!1 &1536326770
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,7 +992,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
 --- !u!114 &2129096327
 MonoBehaviour:
   m_ObjectHideFlags: 0

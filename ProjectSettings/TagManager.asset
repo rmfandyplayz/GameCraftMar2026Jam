@@ -8,6 +8,7 @@ TagManager:
   - Baby
   - Projectile
   - Coffee
+  - Fire
   layers:
   - Default
   - TransparentFX

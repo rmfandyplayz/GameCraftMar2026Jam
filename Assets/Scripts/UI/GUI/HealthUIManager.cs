@@ -35,9 +35,8 @@ public class HealthUIManager : MonoBehaviour
 
         for (int i = 0; i < hearts.Count; i++)
         {
-            if (!hearts[i].gameObject.activeSelf) continue;
-            
-            // uses ur silent init method
+            if (!hearts[i].gameObject.activeSelf) 
+                continue;
             hearts[i].SetState(i < currentHP);
         }
         RefreshBeatingHeart(currentHP);
@@ -78,8 +77,7 @@ public class HealthUIManager : MonoBehaviour
                 hearts[i].Damage();
             }
         }
-
-        // cache it for the next time player takes damage
+        
         previousHP = currentHP;
         RefreshBeatingHeart(currentHP);
     }
@@ -90,9 +88,8 @@ public class HealthUIManager : MonoBehaviour
         {
             if (!hearts[i].gameObject.activeSelf) 
                 continue;
-
-            // the rightmost full heart is at index hp - 1
-            // e.g. if u have 3 hp, index 2 is the rightmost. 
+            
+            // only play animations for the rightmost heart
             bool isRightmost = (i == currentHP - 1);
         
             hearts[i].SetBeating(isRightmost); 

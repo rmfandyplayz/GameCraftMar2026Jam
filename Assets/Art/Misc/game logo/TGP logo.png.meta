@@ -1,0 +1,624 @@
+fileFormatVersion: 2
+guid: dc3fb9ee7b09b40a49ae66f71a68c2b7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6232083380313850239
+    second: TGP logo_0
+  - first:
+      213: -7288105078146380396
+    second: TGP logo_1
+  - first:
+      213: 3904856644348818655
+    second: TGP logo_2
+  - first:
+      213: 221159357666512850
+    second: TGP logo_3
+  - first:
+      213: -4824263016103608282
+    second: TGP logo_4
+  - first:
+      213: 6033269513008547984
+    second: TGP logo_5
+  - first:
+      213: -2077712466919870009
+    second: TGP logo_6
+  - first:
+      213: -2642005651927371840
+    second: TGP logo_7
+  - first:
+      213: 1108064818317532331
+    second: TGP logo_8
+  - first:
+      213: 2320346029679449642
+    second: TGP logo_9
+  - first:
+      213: -137097449326176856
+    second: TGP logo_10
+  - first:
+      213: -4410621130543887979
+    second: TGP logo_11
+  - first:
+      213: -8242745522717898060
+    second: TGP logo_12
+  - first:
+      213: -4912567925411009992
+    second: TGP logo_13
+  - first:
+      213: -1777329511107039151
+    second: TGP logo_14
+  - first:
+      213: 2197679581910747201
+    second: TGP logo_15
+  - first:
+      213: -6340454994103666427
+    second: TGP logo_16
+  - first:
+      213: 9161203341415551677
+    second: TGP logo_17
+  - first:
+      213: 4493491488771971781
+    second: TGP logo_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TGP logo_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 757
+        width: 593
+        height: 939
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f71093eb0decc7650800000000000000
+      internalID: 6232083380313850239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TGP logo_1
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 429
+        width: 679
+        height: 1303
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49d4d53ab037bda90800000000000000
+      internalID: -7288105078146380396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TGP logo_2
+      rect:
+        serializedVersion: 2
+        x: 1294
+        y: 657
+        width: 774
+        height: 1037
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd43c31ed66d03630800000000000000
+      internalID: 3904856644348818655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TGP logo_3
+      rect:
+        serializedVersion: 2
+        x: 2037
+        y: 824
+        width: 813
+        height: 870
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2df47789347b11300800000000000000
+      internalID: 221159357666512850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TGP logo_4
+      rect:
+        serializedVersion: 2
+        x: 2968
+        y: 1548
+        width: 210
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 620071ec856cc0db0800000000000000
+      internalID: -4824263016103608282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TGP logo_5
+      rect:
+        serializedVersion: 2
+        x: 3275
+        y: 916
+        width: 582
+        height: 714
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 098811d08aa7ab350800000000000000
+      internalID: 6033269513008547984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TGP logo_6
+      rect:
+        serializedVersion: 2
+        x: 3725
+        y: 832
+        width: 854
+        height: 878
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c137dff48b7a23e0800000000000000
+      internalID: -2077712466919870009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TGP logo_7
+      rect:
+        serializedVersion: 2
+        x: 4930
+        y: 832
+        width: 586
+        height: 954
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cf6b468bd5b55bd0800000000000000
+      internalID: -2642005651927371840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TGP logo_8
+      rect:
+        serializedVersion: 2
+        x: 5638
+        y: 815
+        width: 611
+        height: 853
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bac9cebd413a06f00800000000000000
+      internalID: 1108064818317532331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TGP logo_9
+      rect:
+        serializedVersion: 2
+        x: 5936
+        y: 1136
+        width: 599
+        height: 578
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2618079b66833020800000000000000
+      internalID: 2320346029679449642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TGP logo_10
+      rect:
+        serializedVersion: 2
+        x: 2988
+        y: 809
+        width: 165
+        height: 652
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a51d41a89ee81ef0800000000000000
+      internalID: -137097449326176856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TGP logo_11
+      rect:
+        serializedVersion: 2
+        x: 4598
+        y: 757
+        width: 488
+        height: 633
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 599891343735ac2c0800000000000000
+      internalID: -4410621130543887979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TGP logo_12
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 61
+        width: 359
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ba45787e92eb9d80800000000000000
+      internalID: -8242745522717898060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TGP logo_13
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 0
+        width: 414
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83a26eeef7d03dbb0800000000000000
+      internalID: -4912567925411009992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TGP logo_14
+      rect:
+        serializedVersion: 2
+        x: 2054
+        y: 65
+        width: 795
+        height: 665
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15075a1f938a557e0800000000000000
+      internalID: -1777329511107039151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TGP logo_15
+      rect:
+        serializedVersion: 2
+        x: 2947
+        y: 65
+        width: 661
+        height: 718
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1484be99fe9bf7e10800000000000000
+      internalID: 2197679581910747201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TGP logo_16
+      rect:
+        serializedVersion: 2
+        x: 3722
+        y: 65
+        width: 574
+        height: 650
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 509791aa6cd2208a0800000000000000
+      internalID: -6340454994103666427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TGP logo_17
+      rect:
+        serializedVersion: 2
+        x: 4415
+        y: 65
+        width: 599
+        height: 633
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db21230a6e1232f70800000000000000
+      internalID: 9161203341415551677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TGP logo_18
+      rect:
+        serializedVersion: 2
+        x: 5151
+        y: 65
+        width: 634
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ca9e7593b61c5e30800000000000000
+      internalID: 4493491488771971781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      TGP logo_0: 6232083380313850239
+      TGP logo_1: -7288105078146380396
+      TGP logo_10: -137097449326176856
+      TGP logo_11: -4410621130543887979
+      TGP logo_12: -8242745522717898060
+      TGP logo_13: -4912567925411009992
+      TGP logo_14: -1777329511107039151
+      TGP logo_15: 2197679581910747201
+      TGP logo_16: -6340454994103666427
+      TGP logo_17: 9161203341415551677
+      TGP logo_18: 4493491488771971781
+      TGP logo_2: 3904856644348818655
+      TGP logo_3: 221159357666512850
+      TGP logo_4: -4824263016103608282
+      TGP logo_5: 6033269513008547984
+      TGP logo_6: -2077712466919870009
+      TGP logo_7: -2642005651927371840
+      TGP logo_8: 1108064818317532331
+      TGP logo_9: 2320346029679449642
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

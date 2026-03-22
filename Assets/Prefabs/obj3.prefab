@@ -47,4 +47,4 @@ MonoBehaviour:
   OnObjectiveUpdate:
     m_PersistentCalls:
       m_Calls: []
-  objectiveText: Lure the baby to many locations
+  objectiveText: Lure the baby (E) to your location to feed.

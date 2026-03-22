@@ -26,4 +26,24 @@ public class BlockShards : DamagingObject
             Destroy(this.gameObject);
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.collider.CompareTag("Player"))
+        {
+            player.TakeDamage();
+            Destroy(this.gameObject);
+        }
+
+        if (other.collider.CompareTag("Coffee"))
+        {
+            player.TakeDamage();
+            Destroy(this.gameObject);
+        }
+
+        if (other.collider.CompareTag("Wall"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }

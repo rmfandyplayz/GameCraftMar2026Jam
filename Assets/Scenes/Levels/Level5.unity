@@ -17542,7 +17542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ToggleObject
   targetObject: {fileID: 28221625}
   targetObject2: {fileID: 959684930}
-  interval: 1
+  interval: 5
   player: {fileID: 107959690803736241}
 --- !u!4 &874240361
 Transform:
@@ -30891,12 +30891,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5489891106828367638, guid: 07e71c9bf318246d58a4973dd09bdb1d, type: 3}
+      propertyPath: dark
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5489891106828367638, guid: 07e71c9bf318246d58a4973dd09bdb1d, type: 3}
       propertyPath: speed
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5489891106828367638, guid: 07e71c9bf318246d58a4973dd09bdb1d, type: 3}
       propertyPath: winScene
-      value: Comic4
+      value: Ending
       objectReference: {fileID: 0}
     - target: {fileID: 5489891106828367638, guid: 07e71c9bf318246d58a4973dd09bdb1d, type: 3}
       propertyPath: itemObjectives.Array.size

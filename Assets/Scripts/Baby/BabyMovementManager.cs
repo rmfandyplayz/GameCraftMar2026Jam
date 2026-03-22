@@ -12,6 +12,7 @@ namespace Baby
         private List<Connection> connections;
         [SerializeField] private float moveSpeed;
         [HideInInspector] public bool isMoving;
+        [SerializeField] private bool canFly;
         private Animator anim;
         
         void Awake()
@@ -109,11 +110,43 @@ namespace Baby
 
         private IEnumerator TravelPath(List<MovementNode> path)
         {
-            anim.SetBool("isMoving", true);
+            if (canFly)
+            {
+                anim.SetBool("isMoving", false);
+                anim.SetBool("isFlying", true);
+                anim.SetBool("isIdle", false);
+                anim.SetBool("isPlaying", false);
+                anim.SetBool("isNapping", false);
+            }
+            else
+            {
+                anim.SetBool("isMoving", true);
+                anim.SetBool("isFlying", false);
+                anim.SetBool("isIdle", false);
+                anim.SetBool("isPlaying", false);
+                anim.SetBool("isNapping", false);
+            }
+
             foreach (MovementNode node in path)
             {
-                Debug.Log(anim.GetBool("isMoving"));
                 Vector3 targetPosition = node.transform.position;
+                Vector3 travelVector = targetPosition - transform.position;
+                if (Math.Abs(travelVector.x) >= Math.Abs(travelVector.y))
+                {
+                    anim.SetFloat("directionIndex", 1f);
+                    GetComponent<SpriteRenderer>().flipX = travelVector.x > 0;
+                }
+                else
+                {
+                    if (travelVector.y > 0)
+                    {
+                        anim.SetFloat("directionIndex", 2f);
+                    }
+                    else
+                    {
+                        anim.SetFloat("directionIndex", 0f);
+                    }
+                }
 
                 // Move towards this node until we reach it
                 while (Vector3.Distance(transform.position, targetPosition) > 0.01f)
@@ -129,8 +162,42 @@ namespace Baby
 
                 transform.position = targetPosition;
             }
-            anim.SetBool("isMoving" , false);
             isMoving = false;
+            anim.SetBool("isMoving" , false);
+            if (path[^1].location == NodeLocation.PlayRoom)
+            {
+                anim.SetBool("isMoving", false);
+                anim.SetBool("isFlying", false);
+                anim.SetBool("isIdle", false);
+                anim.SetBool("isPlaying", true);
+                anim.SetBool("isNapping", false);
+            }
+            else if (path[^1].location == NodeLocation.Bedroom)
+            {
+                anim.SetBool("isMoving", false);
+                anim.SetBool("isFlying", false);
+                anim.SetBool("isIdle", false);
+                anim.SetBool("isPlaying", false);
+                anim.SetBool("isNapping", true);
+            }
+            else if (path[^1].location == NodeLocation.Kitchen)
+            {
+                anim.SetBool("isMoving", false);
+                anim.SetBool("isFlying", false);
+                anim.SetBool("isIdle", true);
+                anim.SetBool("isPlaying", false);
+                anim.SetBool("isNapping", false);
+                anim.SetFloat("directionIndex", 2f);
+            }
+            else
+            {
+                anim.SetBool("isMoving", false);
+                anim.SetBool("isFlying", false);
+                anim.SetBool("isIdle", true);
+                anim.SetBool("isPlaying", false);
+                anim.SetBool("isNapping", false);
+                anim.SetFloat("directionIndex", 0f);
+            }
         }
 
 

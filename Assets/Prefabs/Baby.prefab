@@ -142,6 +142,7 @@ MonoBehaviour:
   mcDuration: 3
   laserPrefab: {fileID: 4497230860240276489, guid: 111828e791fe64f44b108510c1943fb9, type: 3}
   shardPrefab: {fileID: 7277987087275431005, guid: 8e33cf07a1c6868409aee2d140248c4a, type: 3}
+  firePrefab: {fileID: 4265386508308322575, guid: 97c29b0ff8f3f0549b7e30c66b3b655e, type: 3}
   currentNode: {fileID: 0}
 --- !u!114 &2404917782840255650
 MonoBehaviour:
@@ -155,7 +156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d286c615066a45fe8cd6d50bd0983417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BabyMindController
-  player: {fileID: 0}
 --- !u!95 &36486295896852990
 Animator:
   serializedVersion: 7

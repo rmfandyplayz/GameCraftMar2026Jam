@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 5601936307251028217}
   - component: {fileID: 1712430138182116157}
   m_Layer: 0
-  m_Name: Laser
-  m_TagString: Projectile
+  m_Name: Ice Laser
+  m_TagString: Ice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7466768298531040015, guid: 56b494703f3acf84bb9e39ab32cb3c68, type: 3}
+  m_Sprite: {fileID: 1956478024010296806, guid: 3f3e5124a74f6c842a9a2cfb6b021377, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

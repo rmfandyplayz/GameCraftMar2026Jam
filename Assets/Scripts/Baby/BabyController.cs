@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Baby
@@ -15,14 +14,12 @@ namespace Baby
         [SerializeField] private float mindControlRate = 4f;
         [SerializeField] private float mcRadius = 3f;
         [SerializeField] private float mcDuration = 3f;
-        [SerializeField] private bool canFly;
         
         [SerializeField] private GameObject laserPrefab;
         [SerializeField] private GameObject shardPrefab;
         [SerializeField] private GameObject firePrefab;
         
         private GameObject player;
-        private Animator anim;
         
         private BabyMovementManager movement;
         private BabyMindController mindControl;
@@ -33,7 +30,6 @@ namespace Baby
         {
             movement = GetComponent<BabyMovementManager>();
             mindControl = GetComponent<BabyMindController>();
-            anim = GetComponent<Animator>();
             mindControl.enabled = false;
             nextGoal = movement.goalNodes[Random.Range(0, movement.goalNodes.Count)];
             while (nextGoal == currentNode)
@@ -50,21 +46,33 @@ namespace Baby
             if (!movement.isMoving)
             {
                 moveTimer += Time.deltaTime;
+                if (currentNode.location == NodeLocation.None)
+                {
+                    laserTimer +=  Time.deltaTime;
+                    if (laserTimer >= shootRate)
+                    {
+                        if (player != null)
+                        {
+                            //Lasers aim at player
+                            Vector2 direction = (player.transform.position - transform.position).normalized;
 
-                if (currentNode.location == NodeLocation.Kitchen)
-                {
-                    anim.SetBool("isMoving", false);
-                    anim.SetBool("isFlying", false);
-                    anim.SetBool("isIdle", true);
-                    anim.SetBool("isPlaying", false);
+                            Quaternion rotation = Quaternion.FromToRotation(Vector2.right, direction);
+
+                            GameObject laser = Instantiate(laserPrefab, transform.position, rotation);
+
+                            LaserProjectile proj = laser.GetComponent<LaserProjectile>();
+                            proj.moveDir = direction;
+                        }
+
+                        laserTimer = 0;
+                    }
                 }
-                
-                if (currentNode.location == NodeLocation.PlayRoom)
+                    
                 {
-                    anim.SetBool("isMoving", false);
-                    anim.SetBool("isFlying", false);
-                    anim.SetBool("isIdle", false);
-                    anim.SetBool("isPlaying", true);
+                    Quaternion angle = Quaternion.Euler(0, 0, 0);
+                    GameObject fire = Instantiate(firePrefab, transform.position, angle);
+                    FireProjectile proj = fire.GetComponent<FireProjectile>();
+                    proj.moveDir = fire.transform.up;
                 }
                 
                 if (moveTimer >= chillTime)

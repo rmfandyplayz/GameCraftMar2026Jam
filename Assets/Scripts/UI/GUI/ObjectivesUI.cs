@@ -1,5 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
+using TMPro;
+using System.Collections.Generic;
 
 // controls the visibility and contents of the objects stuff
 public class ObjectivesUI : MonoBehaviour
@@ -7,6 +9,8 @@ public class ObjectivesUI : MonoBehaviour
     [SerializeField] private CanvasGroup iconGroup;
     [SerializeField] private CanvasGroup objectiveGroup;
     [SerializeField] private RectTransform mapGroupTransform;
+
+    [SerializeField] private List<TextMeshProUGUI> objectiveText; // max 2 ig
     
     public void Open()
     {
@@ -55,5 +59,30 @@ public class ObjectivesUI : MonoBehaviour
     public void ShowIcon()
     {
         iconGroup.DOFade(1, 0.2f);
+    }
+    
+    // replace the last text with new objective. all other text will be replaced with
+    // the next one on the list, where it's also strikethroughed
+    public void UpdateObjectiveText(string newObjective)
+    {
+        // no objectives yet
+        if (string.IsNullOrEmpty(objectiveText[0].text))
+        {
+            objectiveText[0].text = newObjective;
+            return;
+        }
+
+        // shift everything and strikethrough
+        for (int i = 0; i < objectiveText.Count - 1; i++)
+        {
+            string nextText = objectiveText[i + 1].text;
+            
+            if (!string.IsNullOrEmpty(nextText) && !nextText.StartsWith("<s>"))
+                nextText = $"<s>{nextText}</s>";
+
+            objectiveText[i].text = nextText;
+        }
+        
+        objectiveText[^1].text = newObjective; // newest thing no strikethrough
     }
 }

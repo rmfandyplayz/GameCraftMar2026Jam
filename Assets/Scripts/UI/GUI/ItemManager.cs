@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
@@ -14,6 +15,15 @@ public class ItemManager : MonoBehaviour
     private void Awake()
     {
         playerRef = FindFirstObjectByType<Player>().GetComponent<Player>();
+        
+        // hide this by default
+        itemSprite.color = new Color(1, 1, 1, 0);
+        itemSprite.rectTransform.anchoredPosition = new Vector2(-150, 150);
+        itemSprite.rectTransform.localScale = new Vector2(1.1f, 1.1f);
+        
+        backgroundSprite.color = new Color(1, 1, 1, 0);
+        backgroundSprite.rectTransform.anchoredPosition = new Vector2(-20, 33);
+        backgroundSprite.rectTransform.rotation = Quaternion.Euler(0, 0, -9);
     }
 
     private void OnEnable()

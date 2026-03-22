@@ -18,6 +18,7 @@ namespace Baby
         
         [SerializeField] private GameObject laserPrefab;
         [SerializeField] private GameObject shardPrefab;
+        private GameObject player;
         
         private BabyMovementManager movement;
         private BabyMindController mindControl;
@@ -34,6 +35,9 @@ namespace Baby
             {
                 nextGoal = movement.goalNodes[Random.Range(0, movement.goalNodes.Count)];
             }
+
+            //Finds the player
+            player = GameObject.FindGameObjectWithTag("Player");
         }
 
         void Update()
@@ -70,13 +74,22 @@ namespace Baby
             {
                 laserTimer +=  Time.deltaTime;
                 mcTimer += Time.deltaTime;
-                
+
                 if (laserTimer >= shootRate)
                 {
-                    Quaternion angle = Quaternion.Euler(0, 0, Random.Range(0f, 360f));
-                    GameObject laser = Instantiate(laserPrefab, transform.position, angle);
-                    LaserProjectile proj = laser.GetComponent<LaserProjectile>();
-                    proj.moveDir = laser.transform.right;
+                    if (player != null)
+                    {
+                        //Lasers aim at player
+                        Vector2 direction = (player.transform.position - transform.position).normalized;
+
+                        Quaternion rotation = Quaternion.FromToRotation(Vector2.right, direction);
+
+                        GameObject laser = Instantiate(laserPrefab, transform.position, rotation);
+
+                        LaserProjectile proj = laser.GetComponent<LaserProjectile>();
+                        proj.moveDir = direction;
+                    }
+
                     laserTimer = 0;
                 }
 

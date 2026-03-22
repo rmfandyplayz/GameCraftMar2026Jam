@@ -111,13 +111,17 @@ MonoBehaviour:
   health: 3
   speed: 14
   ItemId: 0
+  canMove: 1
   ItemSprite: {fileID: 4928318004268583563}
-  CoffeeItem: {fileID: 3038181181589852409, guid: 174ef1f33cd2c4413b62de50faa5fb0a, type: 3}
+  CoffeeItem: {fileID: 759616773641869331, guid: ee01139303cd43548bf7ad4f02e39620, type: 3}
+  RattleEffect: {fileID: 7303418713443589382, guid: a213c0178ff6a934bbd2ce181e9b540a, type: 3}
   Sprites:
   - {fileID: 0}
   - {fileID: 4631271119293318757, guid: b2749256f282e4ca3b15deb1c60d97da, type: 3}
   - {fileID: 4631271119293318757, guid: b2749256f282e4ca3b15deb1c60d97da, type: 3}
   - {fileID: 6176816175218970642, guid: b5d66ba850e554b24ba9dd8bf3ed3d0c, type: 3}
+  iFrameDuration: 1
+  flashSpeed: 12
   OnHPChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -129,6 +133,7 @@ MonoBehaviour:
       m_Calls: []
   animator: {fileID: 6539812920575387050}
   playerSprite: {fileID: 1858041979232943548}
+  hurtSound: {fileID: 8289667637420428183, guid: 1b53d3b455c848a4e9d450c57d8c3e5b, type: 3}
 --- !u!50 &3402016789487743225
 Rigidbody2D:
   serializedVersion: 5
@@ -190,7 +195,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.015381336, y: -1.784213}
+  m_Offset: {x: -0.015381336, y: -0.15692902}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -200,7 +205,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.7075329, y: 5.5528183}
+  m_Size: {x: 1.7075329, y: 8.807386}
   m_EdgeRadius: 0
 --- !u!95 &6539812920575387050
 Animator:

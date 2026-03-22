@@ -2,15 +2,25 @@ using UnityEngine;
 
 public class Coffee : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public SceneTransition sceneTrans;
+    public string SceneName;
     void Start()
     {
-        
+        sceneTrans = FindFirstObjectByType<SceneTransition>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (other.CompareTag("Projectile"))
+        {
+            if (sceneTrans != null)
+            {
+                sceneTrans.LoadScene(SceneName);
+            }
+            else
+            {
+                Debug.LogWarning("SceneTransition not found!");
+            }
+        }
     }
 }

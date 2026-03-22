@@ -1,9 +1,10 @@
+using Baby;
 using System;
+using Unity.VectorGraphics;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
-using Baby;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class Player : MonoBehaviour
     [Header("Items")]
     public SpriteRenderer ItemSprite;
     public GameObject CoffeeItem;
+    public GameObject RattleEffect;
 
     public Sprite[] Sprites;
     private float useLockTimer = 0f;
@@ -45,6 +47,11 @@ public class Player : MonoBehaviour
     private InputAction useAction;
 
     private Rigidbody2D rb;
+
+    private SceneTransition sceneTrans;
+
+    [Header("Sounds")]
+    public GameObject hurtSound;
 
     private void Awake()
     {
@@ -90,6 +97,8 @@ public class Player : MonoBehaviour
         {
             gameObject.AddComponent<PlayerController>();
         }
+
+        sceneTrans = FindFirstObjectByType<SceneTransition>();
     }
 
     private void Update()
@@ -189,6 +198,7 @@ public class Player : MonoBehaviour
         if (ItemId == 3)
         {
             FindFirstObjectByType<BabyController>()?.SetGoalNode(transform.position);
+            Instantiate(RattleEffect, transform.position, Quaternion.identity);
         }
     }
 
@@ -196,6 +206,8 @@ public class Player : MonoBehaviour
     {
         if (isInvincible)
             return;
+
+        Instantiate(hurtSound, transform.position, Quaternion.identity);
 
         health -= 1;
         OnHPChanged.Invoke(health);
@@ -205,7 +217,7 @@ public class Player : MonoBehaviour
 
         if (health <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            sceneTrans.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }

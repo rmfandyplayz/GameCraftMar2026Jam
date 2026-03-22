@@ -522,8 +522,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -586, y: -305}
-  m_SizeDelta: {x: 530.6265, y: 498.2916}
+  m_AnchoredPosition: {x: -618.10004, y: -284.67126}
+  m_SizeDelta: {x: 548.13, y: 500.7275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &559835314
 MonoBehaviour:
@@ -589,8 +589,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -7351681952266153540, guid: 4417953166fa04a7dacc022995927c55, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -620,13 +620,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonFrameAnims
   normalFrames:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: -7351681952266153540, guid: 4417953166fa04a7dacc022995927c55, type: 3}
+  - {fileID: 9032087756154528666, guid: d64df5f7d283344b0bfab1a65bb1ac25, type: 3}
   hoverFrames:
-  - {fileID: 0}
-  - {fileID: 0}
-  disabledFrame: {fileID: 0}
-  timePerFrame: 0
+  - {fileID: 2363501870059117484, guid: b3ed31d026ea7432b9239e7305e6f34e, type: 3}
+  - {fileID: -3726539302135606886, guid: fae5095614a5045dd95aa3ee112c63b6, type: 3}
+  disabledFrame: {fileID: 454384789887790934, guid: 8b7506f4f1820434f8ed0f828601bce8, type: 3}
+  timePerFrame: 5
 --- !u!1 &720667149
 GameObject:
   m_ObjectHideFlags: 0
@@ -663,8 +663,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 843.37744, y: 452.33847}
-  m_SizeDelta: {x: 153.9574, y: 121.6227}
+  m_AnchoredPosition: {x: 839.9919, y: 437.00873}
+  m_SizeDelta: {x: 134.2052, y: 120.9787}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &720667151
 MonoBehaviour:
@@ -730,8 +730,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 3219497283109734182, guid: b0c7adb5e137447ebab7e53ce7e0fba7, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -761,13 +761,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonFrameAnims
   normalFrames:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 3219497283109734182, guid: b0c7adb5e137447ebab7e53ce7e0fba7, type: 3}
+  - {fileID: 6541613309500246304, guid: 05ccaa84a43854118927f65584e77005, type: 3}
   hoverFrames:
-  - {fileID: 0}
-  - {fileID: 0}
-  disabledFrame: {fileID: 0}
-  timePerFrame: 0
+  - {fileID: 3009241833550112473, guid: 63e06888e654742d2b024445bb3a3da9, type: 3}
+  - {fileID: 5652428929936651327, guid: 304ca8de9c291432e8a8f834f12d8220, type: 3}
+  disabledFrame: {fileID: 2682254054571983813, guid: 1f6898d6b4f1e4cecb05225deec6a477, type: 3}
+  timePerFrame: 5
 --- !u!1 &1307036213
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,8 +950,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -631, y: 235}
-  m_SizeDelta: {x: 530.6265, y: 498.2916}
+  m_AnchoredPosition: {x: -625.79, y: 251.5172}
+  m_SizeDelta: {x: 554.43, y: 491.9656}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1818133660
 MonoBehaviour:
@@ -1017,8 +1017,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 1937028358810224293, guid: 4c7454bb1389748f2bb61ed060f5c389, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1048,13 +1048,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonFrameAnims
   normalFrames:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1937028358810224293, guid: 4c7454bb1389748f2bb61ed060f5c389, type: 3}
+  - {fileID: -3726539302135606886, guid: fae5095614a5045dd95aa3ee112c63b6, type: 3}
   hoverFrames:
-  - {fileID: 0}
-  - {fileID: 0}
-  disabledFrame: {fileID: 0}
-  timePerFrame: 0
+  - {fileID: 4616932718064448201, guid: 1300f88a4dccc489fbee74a39a412520, type: 3}
+  - {fileID: 2390255544363111718, guid: 515ea5d2302b44668b7ec2129c817c9a, type: 3}
+  disabledFrame: {fileID: 5004246796602177500, guid: 0439153345bbd45b7bb08246df52179b, type: 3}
+  timePerFrame: 5
 --- !u!1 &1919297332
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,17 +1082,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1919297332}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.00000037449212, y: 0.0000000033387144, z: 0.008936087, w: -0.99996006}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 303051439}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -1.024}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 371, y: -366}
-  m_SizeDelta: {x: 846.7123, y: 282.2997}
+  m_AnchoredPosition: {x: 285.50128, y: -344.31744}
+  m_SizeDelta: {x: 1243.1855, y: 297.8803}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1919297334
 MonoBehaviour:
@@ -1158,8 +1158,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -7665195450718798357, guid: fb1a4408ea94d4d6c8851ce45dea13d5, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1189,13 +1189,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonFrameAnims
   normalFrames:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: -7665195450718798357, guid: fb1a4408ea94d4d6c8851ce45dea13d5, type: 3}
+  - {fileID: 1635718887107626151, guid: 0edc85bf7498b4a16b74e160aa36eabc, type: 3}
   hoverFrames:
-  - {fileID: 0}
-  - {fileID: 0}
-  disabledFrame: {fileID: 0}
-  timePerFrame: 0
+  - {fileID: 7071217327713536010, guid: 6240187bc41244be5bfe6258b93aab79, type: 3}
+  - {fileID: -1735956937581019046, guid: e6c3621446737420b9914e19a75f4c6b, type: 3}
+  disabledFrame: {fileID: -933742300967405876, guid: a6bfbdc13cebf4da0a27ab7b4c682b82, type: 3}
+  timePerFrame: 5
 --- !u!1 &2120346034
 GameObject:
   m_ObjectHideFlags: 0

@@ -54,6 +54,7 @@ public class ReferenceManager : MonoBehaviour
 
     public void UpdateObjective(string newObjective)
     {
+        Debug.Log("OBJECTIVE SIGNAL RECEIVED, SHOULD BE CALLED");
         objectivesUI.UpdateObjectiveText(newObjective);
     }
 
